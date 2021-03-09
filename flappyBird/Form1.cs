@@ -48,7 +48,13 @@ namespace flappyBird
                 // als je de toets los laat word de gravity weer terug gezet naar 15
                 gravity = 15;
             }
+        }
 
+        private void endGame()
+        {
+            // this is the game end function, this function will when the bird touches the ground or the pipes
+            GameTimer.Stop(); // stop the main timer
+            score.Text += " Game over!!!"; // show the game over text on the score text, += is used to add the new string of text next to the score instead of overriding it
         }
     }
 }

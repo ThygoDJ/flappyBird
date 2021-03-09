@@ -36,7 +36,7 @@ namespace flappyBird
             this.PipeUp = new System.Windows.Forms.PictureBox();
             this.FlappyBird = new System.Windows.Forms.PictureBox();
             this.PipeDown = new System.Windows.Forms.PictureBox();
-            this.gametimer = new System.Windows.Forms.Timer(this.components);
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PipeUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FlappyBird)).BeginInit();
@@ -93,10 +93,9 @@ namespace flappyBird
             this.PipeDown.TabIndex = 9;
             this.PipeDown.TabStop = false;
             // 
-            // gametimer
+            // GameTimer
             // 
-            this.gametimer.Interval = 20;
-           
+            this.GameTimer.Interval = 20;
             // 
             // Form1
             // 
@@ -112,7 +111,6 @@ namespace flappyBird
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-           
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PipeUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FlappyBird)).EndInit();
@@ -128,7 +126,7 @@ namespace flappyBird
         private System.Windows.Forms.PictureBox FlappyBird;
         private System.Windows.Forms.PictureBox PipeUp;
         private System.Windows.Forms.PictureBox Grond;
-        private System.Windows.Forms.Timer gametimer;
+        private System.Windows.Forms.Timer GameTimer;
     }
 }
 

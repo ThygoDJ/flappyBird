@@ -12,50 +12,45 @@ namespace flappyBird
 {
     public partial class Form1 : Form
     {
+
+
+
+        // Variabelen
+
+        int pipeSpeed = 8; // standaart snelheid aangegeven met getal
+        int gravity = 15; // standaart gravity aangegeven met getal
+        int score = 0; // standaard score 0
+                       // einde variabelen
+
         public Form1()
         {
             InitializeComponent();
-            
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void gamekeyisdown(object sender, KeyEventArgs e)
         {
+            // dit is de gamekey die gekoppeld is aan naar beneden gaan
+            if (e.KeyCode == Keys.Space)
+            {
+                // als je spatie indrukt word de gravity -15
+                gravity = -15;
+            }
 
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        private void gamekeyisup(object sender, KeyEventArgs e)
         {
+            // dit is de toets die gekoppeld is aan naar boven gaan
 
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
+            if (e.KeyCode == Keys.Space)
+            {
+                // als je de toets los laat word de gravity weer terug gezet naar 15
+                gravity = 15;
+            }
 
         }
     }
 }
+
+        

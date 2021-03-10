@@ -31,27 +31,27 @@ namespace flappyBird
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             this.Grond = new System.Windows.Forms.PictureBox();
-            this.PipeUp = new System.Windows.Forms.PictureBox();
-            this.FlappyBird = new System.Windows.Forms.PictureBox();
-            this.PipeDown = new System.Windows.Forms.PictureBox();
-            this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            this.BuisO = new System.Windows.Forms.PictureBox();
+            this.flappyBird = new System.Windows.Forms.PictureBox();
+            this.buisB = new System.Windows.Forms.PictureBox();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PipeUp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FlappyBird)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PipeDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuisO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisB)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // scoreText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 80);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Score: 0";
+            this.scoreText.AutoSize = true;
+            this.scoreText.Font = new System.Drawing.Font("Arial", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.Location = new System.Drawing.Point(24, 27);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(306, 80);
+            this.scoreText.TabIndex = 4;
+            this.scoreText.Text = "Score: 0";
             // 
             // Grond
             // 
@@ -63,39 +63,41 @@ namespace flappyBird
             this.Grond.TabIndex = 15;
             this.Grond.TabStop = false;
             // 
-            // PipeUp
+            // BuisO
             // 
-            this.PipeUp.Image = global::flappyBird.Properties.Resources.pipeUp1;
-            this.PipeUp.Location = new System.Drawing.Point(679, 410);
-            this.PipeUp.Name = "PipeUp";
-            this.PipeUp.Size = new System.Drawing.Size(104, 532);
-            this.PipeUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PipeUp.TabIndex = 14;
-            this.PipeUp.TabStop = false;
+            this.BuisO.Image = global::flappyBird.Properties.Resources.pipeUp1;
+            this.BuisO.Location = new System.Drawing.Point(679, 410);
+            this.BuisO.Name = "BuisO";
+            this.BuisO.Size = new System.Drawing.Size(104, 532);
+            this.BuisO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BuisO.TabIndex = 14;
+            this.BuisO.TabStop = false;
             // 
-            // FlappyBird
+            // flappyBird
             // 
-            this.FlappyBird.Image = ((System.Drawing.Image)(resources.GetObject("FlappyBird.Image")));
-            this.FlappyBird.Location = new System.Drawing.Point(72, 268);
-            this.FlappyBird.Name = "FlappyBird";
-            this.FlappyBird.Size = new System.Drawing.Size(98, 104);
-            this.FlappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.FlappyBird.TabIndex = 12;
-            this.FlappyBird.TabStop = false;
+            this.flappyBird.Image = ((System.Drawing.Image)(resources.GetObject("flappyBird.Image")));
+            this.flappyBird.Location = new System.Drawing.Point(72, 268);
+            this.flappyBird.Name = "flappyBird";
+            this.flappyBird.Size = new System.Drawing.Size(98, 104);
+            this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.flappyBird.TabIndex = 12;
+            this.flappyBird.TabStop = false;
             // 
-            // PipeDown
+            // buisB
             // 
-            this.PipeDown.Image = ((System.Drawing.Image)(resources.GetObject("PipeDown.Image")));
-            this.PipeDown.Location = new System.Drawing.Point(679, -258);
-            this.PipeDown.Name = "PipeDown";
-            this.PipeDown.Size = new System.Drawing.Size(104, 486);
-            this.PipeDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PipeDown.TabIndex = 9;
-            this.PipeDown.TabStop = false;
+            this.buisB.Image = ((System.Drawing.Image)(resources.GetObject("buisB.Image")));
+            this.buisB.Location = new System.Drawing.Point(679, -258);
+            this.buisB.Name = "buisB";
+            this.buisB.Size = new System.Drawing.Size(104, 486);
+            this.buisB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buisB.TabIndex = 9;
+            this.buisB.TabStop = false;
             // 
-            // GameTimer
+            // gameTimer
             // 
-            this.GameTimer.Interval = 20;
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
             // 
             // Form1
             // 
@@ -105,28 +107,30 @@ namespace flappyBird
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 754);
             this.Controls.Add(this.Grond);
-            this.Controls.Add(this.PipeUp);
-            this.Controls.Add(this.FlappyBird);
-            this.Controls.Add(this.PipeDown);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BuisO);
+            this.Controls.Add(this.flappyBird);
+            this.Controls.Add(this.buisB);
+            this.Controls.Add(this.scoreText);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PipeUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FlappyBird)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PipeDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuisO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox PipeDown;
-        private System.Windows.Forms.PictureBox FlappyBird;
-        private System.Windows.Forms.PictureBox PipeUp;
+        private System.Windows.Forms.Label scoreText;
+        private System.Windows.Forms.PictureBox buisB;
+        private System.Windows.Forms.PictureBox flappyBird;
+        private System.Windows.Forms.PictureBox BuisO;
         private System.Windows.Forms.PictureBox Grond;
-        private System.Windows.Forms.Timer GameTimer;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 

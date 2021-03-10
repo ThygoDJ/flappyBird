@@ -128,7 +128,7 @@
         tA60DrQOtA60DrQOtA60DrRuBHrOH81swZMxevjpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="FlappyBird.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="flappyBird.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfAAAAHwCAYAAABZrD3mAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
         DwAAjA8AAP1SAACBQAAAfXkAAOmLAAA85QAAGcxzPIV3AAAKOWlDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
@@ -350,7 +350,7 @@
         zXgIAADCzXgIAADCzXgIAADCzXgIAADCzXgIAADCTMr+P4AkP/dUCuM/AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PipeDown.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buisB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAFACAYAAADzvF+IAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsQAAA7EAZUrDhsAABG1SURBVHhe7ZzPr11VFcf9W0w0
@@ -432,7 +432,7 @@
         PPfj/vMHmotmBnTLxf8DN1FVwOuolaAAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="GameTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="gameTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
 </root>

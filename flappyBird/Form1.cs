@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace flappyBird
 {
     public partial class Form1 : Form
@@ -17,14 +16,21 @@ namespace flappyBird
 
         // Variabelen
 
-        int pipeSpeed = 8; // standaart snelheid aangegeven met getal
-        int gravity = 15; // standaart gravity aangegeven met getal
+        int pipeSpeed = 8; // snelheid aangegeven met getal
+        int gravity = 15; // gravity aangegeven met getal
         int score = 0; // standaard score 0
                        // einde variabelen
-
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void gameTimerEvent(object sender, EventArgs e)
+        {
+            flappyBird.Top += gravity; // hierdoor krijgt de flappybird gravity en snelheid
+            BuisO.Left -= pipeSpeed;  // dit is de snelheid van de buis die dichterbij komt als je spatie drukt 
+            buisB.Left -= pipeSpeed; // dit is de snelheid van de buis die dichterbij komt als je spatie drukt
+            scoreText.Text = "Score: " + score; // dit houd de score bij
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)
@@ -49,14 +55,14 @@ namespace flappyBird
                 gravity = 15;
             }
         }
-
         private void endGame()
         {
-            // this is the game end function, this function will when the bird touches the ground or the pipes
-            GameTimer.Stop(); // stop the main timer
-            score.Text += " Game over!!!"; // show the game over text on the score text, += is used to add the new string of text next to the score instead of overriding it
+            // hierdoor stopt de game 
+            gameTimer.Stop(); // stop de timer
+            scoreText.Text += " Game over!!!"; // laat zien game over in beeld
+
         }
-    }
+         
+    } 
 }
 
-        

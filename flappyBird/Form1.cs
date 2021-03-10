@@ -38,7 +38,12 @@ namespace flappyBird
                 BuisO.Left = 800;
                 score++;
             }
-            
+            if (buisB.Left < -180)
+            {
+                // ls de buis op -180 is gaat hij weer naar 950 en er komt 1 punt bij de score
+                buisB.Left = 950;
+                score++;
+            }
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)

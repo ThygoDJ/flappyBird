@@ -31,6 +31,14 @@ namespace flappyBird
             BuisO.Left -= pipeSpeed;  // dit is de snelheid van de buis die dichterbij komt als je spatie drukt 
             buisB.Left -= pipeSpeed; // dit is de snelheid van de buis die dichterbij komt als je spatie drukt
             scoreText.Text = "Score: " + score; // dit houd de score bij
+
+            if(BuisO.Left < - 150)
+            {
+                // als de buis op -150 is gaat hij weer naar 800 en er komt 1 punt bij de score
+                BuisO.Left = 800;
+                score++;
+            }
+            
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)

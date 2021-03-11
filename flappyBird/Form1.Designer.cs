@@ -57,7 +57,7 @@ namespace flappyBird
             // BuisO
             // 
             this.BuisO.Image = global::flappyBird.Properties.Resources.pipeUp1;
-            this.BuisO.Location = new System.Drawing.Point(679, 498);
+            this.BuisO.Location = new System.Drawing.Point(679, 448);
             this.BuisO.Name = "BuisO";
             this.BuisO.Size = new System.Drawing.Size(104, 532);
             this.BuisO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,8 +66,9 @@ namespace flappyBird
             // 
             // flappyBird
             // 
+            this.flappyBird.BackColor = System.Drawing.Color.Transparent;
             this.flappyBird.Image = ((System.Drawing.Image)(resources.GetObject("flappyBird.Image")));
-            this.flappyBird.Location = new System.Drawing.Point(72, 268);
+            this.flappyBird.Location = new System.Drawing.Point(62, 232);
             this.flappyBird.Name = "flappyBird";
             this.flappyBird.Size = new System.Drawing.Size(98, 104);
             this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -11,21 +11,20 @@ namespace flappyBird
 {
     public partial class Form1 : Form
     {
-
-
-
         // Variabelen
 
         int pipeSpeed = 6 ; // snelheid aangegeven met getal
         int gravity = 8; // gravity aangegeven met getal
         int score = 0; // standaard score 0
         int levens = 3; // het aantal levens van flappy bird           
+       
         // einde variabelen
+        
         public Form1()
         {
             InitializeComponent();
             TimeSpan sleep = TimeSpan.FromMilliseconds(90);
-         }
+        }
 
 
 
@@ -36,10 +35,7 @@ namespace flappyBird
             {
                 // als je spatie indrukt word de gravity -15
                 gravity = -8;
-                
             }
-
-
         }
 
         private void gamekeyisup(object sender, KeyEventArgs e)
@@ -72,27 +68,26 @@ namespace flappyBird
 
             if (BuisO.Left < -150)
             {
-                int nummer = number.Next(700, 800);
+                int nummer = number.Next(700, 800); // dit zorgt ervoor dat de buis random spawnt
 
-                // als de buis op -150 is gaat hij weer naar 800 en er komt 1 punt bij de score
-                BuisO.Left = nummer;
-               
+                BuisO.Left = nummer; // als de buis op -150 is gaat hij weer tussen 700 en 800 
             }
+            
             if (buisB.Left < -150)
             {
-                int nummer = number.Next(700, 800);
+                int nummer = number.Next(700, 800);// dit zorgt ervoor dat de buis random spawnt
 
-                // ls de buis op -180 is gaat hij weer naar 950 en er komt 1 punt bij de score
-                buisB.Left = nummer;
+
+                buisB.Left = nummer; // ls de buis op -180 is gaat hij weer tussen 700 en 800 en er komt 1 punt bij de score
                 score++;
             }
 
             if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
                 flappyBird.Bounds.IntersectsWith(buisB.Bounds) ||
                 flappyBird.Bounds.IntersectsWith(Grond.Bounds) || flappyBird.Top < -25
-              )
+              ) // dit zorgt ervoor wanneer flappy bird een buis of de grond raakt hij verder gaat in het if statement
             {
-                // als hij word geraakt stopt het
+                // als hij word geraakt gaat er een leven af
                 levens = levens - 1;
                 
                 
@@ -100,10 +95,10 @@ namespace flappyBird
 
             if (levens == 0)
             { 
-                endGame();
+                endGame(); // het spel stopt als flappy bird 0 levens heeft
             }
 
-            if (score >+  2)
+            if (score >+  5)
             {
                 pipeSpeed = 10 + 2;
             }

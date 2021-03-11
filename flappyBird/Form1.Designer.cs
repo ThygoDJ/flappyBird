@@ -31,27 +31,18 @@ namespace flappyBird
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.scoreText = new System.Windows.Forms.Label();
             this.Grond = new System.Windows.Forms.PictureBox();
             this.BuisO = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.buisB = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.levensText = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buisB)).BeginInit();
             this.SuspendLayout();
-            // 
-            // scoreText
-            // 
-            this.scoreText.AutoSize = true;
-            this.scoreText.Font = new System.Drawing.Font("Arial", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreText.Location = new System.Drawing.Point(24, 27);
-            this.scoreText.Name = "scoreText";
-            this.scoreText.Size = new System.Drawing.Size(306, 80);
-            this.scoreText.TabIndex = 4;
-            this.scoreText.Text = "Score: 0";
             // 
             // Grond
             // 
@@ -66,7 +57,7 @@ namespace flappyBird
             // BuisO
             // 
             this.BuisO.Image = global::flappyBird.Properties.Resources.pipeUp1;
-            this.BuisO.Location = new System.Drawing.Point(679, 410);
+            this.BuisO.Location = new System.Drawing.Point(679, 498);
             this.BuisO.Name = "BuisO";
             this.BuisO.Size = new System.Drawing.Size(104, 532);
             this.BuisO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,6 +90,28 @@ namespace flappyBird
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
             // 
+            // levensText
+            // 
+            this.levensText.AutoSize = true;
+            this.levensText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levensText.ForeColor = System.Drawing.SystemColors.Window;
+            this.levensText.Location = new System.Drawing.Point(14, 88);
+            this.levensText.Name = "levensText";
+            this.levensText.Size = new System.Drawing.Size(214, 60);
+            this.levensText.TabIndex = 16;
+            this.levensText.Text = "levens: 3";
+            // 
+            // scoreText
+            // 
+            this.scoreText.AutoSize = true;
+            this.scoreText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.ForeColor = System.Drawing.SystemColors.Window;
+            this.scoreText.Location = new System.Drawing.Point(14, 28);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(209, 60);
+            this.scoreText.TabIndex = 17;
+            this.scoreText.Text = "Score: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -106,11 +119,12 @@ namespace flappyBird
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 754);
+            this.Controls.Add(this.scoreText);
+            this.Controls.Add(this.levensText);
             this.Controls.Add(this.Grond);
             this.Controls.Add(this.BuisO);
             this.Controls.Add(this.flappyBird);
             this.Controls.Add(this.buisB);
-            this.Controls.Add(this.scoreText);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
@@ -125,12 +139,13 @@ namespace flappyBird
         }
 
         #endregion
-        private System.Windows.Forms.Label scoreText;
         private System.Windows.Forms.PictureBox buisB;
         private System.Windows.Forms.PictureBox flappyBird;
         private System.Windows.Forms.PictureBox BuisO;
         private System.Windows.Forms.PictureBox Grond;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label levensText;
+        private System.Windows.Forms.Label scoreText;
     }
 }
 

@@ -93,11 +93,20 @@ namespace flappyBird
                 
             }
 
-            if (levens == 0)
+            if (levens == 2)
             { 
-                endGame(); // het spel stopt als flappy bird 0 levens heeft
+              (); // het spel stopt als flappy bird 0 levens heeft
+            }
+            
+            if (levens == 1)
+            {
+                 // het spel stopt als flappy bird 0 levens heeft
             }
 
+            if (levens == 0)
+            {
+                endGame(); // het spel stopt als flappy bird 0 levens heeft
+            }
             if (score >+  5)
             {
                 pipeSpeed = 10 + 2;

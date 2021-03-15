@@ -13,6 +13,7 @@ namespace flappyBird
 
         public partial class Form2 : Form
     {
+        
         // Variabelen
 
         int pipeSpeed = 6; // snelheid aangegeven met getal
@@ -58,13 +59,21 @@ namespace flappyBird
             scoreText.Text += " Game over"; // laat zien game over in beeld
         }
 
+        private void resetGame() // hierdoor zal de game compleet opnieuw gaan
+        {
+            
+            Form3 gameForm = new Form3();
+            gameForm.ShowDialog();
+        }
+
         private void gameTimerEvent(object sender, EventArgs e)
         {
             flappyBird.Top += gravity; // hierdoor krijgt de flappybird gravity en snelheid
             BuisO.Left -= pipeSpeed;  // dit is de snelheid van de buis die dichterbij komt als je spatie drukt 
             buisB.Left -= pipeSpeed; // dit is de snelheid van de buis die dichterbij komt als je spatie drukt
-            scoreText.Text = "Score: " + score; // dit houd de score bij
+            scoreText.Text = "Score: " + score.ToString(); // dit houd de score bij
             levensText.Text = "levens:" + levens.ToString(); // als hij dood gaat leven eraf
+
 
             var number = new Random();
 
@@ -97,12 +106,14 @@ namespace flappyBird
 
             if (levens == 2)
             {
-                (); // het spel stopt als flappy bird 0 levens heeft
+                resetGame();
+               
             }
 
             if (levens == 1)
             {
-                // het spel stopt als flappy bird 0 levens heeft
+                resetGame();
+                levens = 1;
             }
 
             if (levens == 0)
@@ -111,13 +122,16 @@ namespace flappyBird
             }
             if (score > +5)
             {
-                pipeSpeed = 10 + 2;
+                pipeSpeed = 6 + 2;
             }
 
 
         }
 
-        
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

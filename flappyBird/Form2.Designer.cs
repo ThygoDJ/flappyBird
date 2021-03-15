@@ -67,8 +67,9 @@
             // flappyBird
             // 
             this.flappyBird.BackColor = System.Drawing.Color.Transparent;
+            this.flappyBird.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flappyBird.Image = ((System.Drawing.Image)(resources.GetObject("flappyBird.Image")));
-            this.flappyBird.Location = new System.Drawing.Point(62, 232);
+            this.flappyBird.Location = new System.Drawing.Point(46, 170);
             this.flappyBird.Name = "flappyBird";
             this.flappyBird.Size = new System.Drawing.Size(98, 104);
             this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,6 +129,7 @@
             this.Controls.Add(this.buisB);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).EndInit();

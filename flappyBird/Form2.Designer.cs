@@ -1,7 +1,8 @@
 ﻿namespace flappyBird
 {
     
-        partial class Form2
+        partial class form2
+
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +31,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form2));
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.levensText = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             this.Grond = new System.Windows.Forms.PictureBox();
             this.BuisO = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.buisB = new System.Windows.Forms.PictureBox();
-            this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.levensText = new System.Windows.Forms.Label();
-            this.scoreText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buisB)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
+            // 
+            // levensText
+            // 
+            this.levensText.AutoSize = true;
+            this.levensText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levensText.ForeColor = System.Drawing.SystemColors.Window;
+            this.levensText.Location = new System.Drawing.Point(14, 88);
+            this.levensText.Name = "levensText";
+            this.levensText.Size = new System.Drawing.Size(214, 60);
+            this.levensText.TabIndex = 16;
+            this.levensText.Text = "levens: 3";
+            // 
+            // scoreText
+            // 
+            this.scoreText.AutoSize = true;
+            this.scoreText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.ForeColor = System.Drawing.SystemColors.Window;
+            this.scoreText.Location = new System.Drawing.Point(14, 28);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(209, 60);
+            this.scoreText.TabIndex = 17;
+            this.scoreText.Text = "Score: 0";
             // 
             // Grond
             // 
@@ -86,35 +115,7 @@
             this.buisB.TabIndex = 9;
             this.buisB.TabStop = false;
             // 
-            // gameTimer
-            // 
-            this.gameTimer.Enabled = true;
-            this.gameTimer.Interval = 20;
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
-            // 
-            // levensText
-            // 
-            this.levensText.AutoSize = true;
-            this.levensText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.levensText.ForeColor = System.Drawing.SystemColors.Window;
-            this.levensText.Location = new System.Drawing.Point(14, 88);
-            this.levensText.Name = "levensText";
-            this.levensText.Size = new System.Drawing.Size(214, 60);
-            this.levensText.TabIndex = 16;
-            this.levensText.Text = "levens: 3";
-            // 
-            // scoreText
-            // 
-            this.scoreText.AutoSize = true;
-            this.scoreText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreText.ForeColor = System.Drawing.SystemColors.Window;
-            this.scoreText.Location = new System.Drawing.Point(14, 28);
-            this.scoreText.Name = "scoreText";
-            this.scoreText.Size = new System.Drawing.Size(209, 60);
-            this.scoreText.TabIndex = 17;
-            this.scoreText.Text = "Score: 0";
-            // 
-            // Form2
+            // form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +128,7 @@
             this.Controls.Add(this.BuisO);
             this.Controls.Add(this.flappyBird);
             this.Controls.Add(this.buisB);
-            this.Name = "Form2";
+            this.Name = "form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);

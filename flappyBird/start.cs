@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace flappyBird
 {
-
-    public partial class Form1 : Form
+    public partial class start : Form
     {
-        public Form1()
+        public start()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 gameForm = new Form2();
-            gameForm.ShowDialog();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            gametimerevent.Start();
         }
     }
 }

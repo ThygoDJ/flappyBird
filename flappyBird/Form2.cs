@@ -11,7 +11,7 @@ namespace flappyBird
 {
     
 
-        public partial class Form2 : Form
+    public partial class form2 : Form
     {
         
         // Variabelen
@@ -20,13 +20,16 @@ namespace flappyBird
         int gravity = 8; // gravity aangegeven met getal
         int score = 0; // standaard score 0
         int levens = 3; // het aantal levens van flappy bird           
-
+        int eindscore = 0;// uiteindelijke score
+        int score5 = 5;
         // einde variabelen
 
-        public Form2()
+        public form2()
         {
             InitializeComponent();
             TimeSpan sleep = TimeSpan.FromMilliseconds(90);
+            
+            
         }
 
 
@@ -51,19 +54,37 @@ namespace flappyBird
                 gravity = 8;
 
             }
+
         }
+        
+        
         private void endGame()
         {
-            // hierdoor stopt de game 
-            gameTimer.Stop(); // stop de timer
-            scoreText.Text += " Game over"; // laat zien game over in beeld
+            gameTimer.Stop();
+            eindscore = eindscore + score;
+            if (levens == 0)
+            {
+                scoreText.Text = "eind score: " + eindscore.ToString();
+            }
+            else
+            {
+                eindscoreText.Text = " score: " + eindscore.ToString();
+            }
         }
 
         private void resetGame() // hierdoor zal de game compleet opnieuw gaan
         {
-            
-            Form3 gameForm = new Form3();
-            gameForm.ShowDialog();
+
+
+            score = 0;
+
+            pipeSpeed = 10;
+
+            score5 = 5;
+
+            buisB.Hide();
+            BuisO.Hide();
+           
         }
 
         private void gameTimerEvent(object sender, EventArgs e)
@@ -100,38 +121,23 @@ namespace flappyBird
             {
                 // als hij word geraakt gaat er een leven af
                 levens = levens - 1;
+                endGame();
 
 
             }
-
-            if (levens == 2)
+            if (score == score5)
             {
-                resetGame();
-               
-            }
+                pipeSpeed = pipeSpeed + 1;
+                score5 = score5 + 5;
 
-            if (levens == 1)
-            {
-                resetGame();
-                levens = 1;
-            }
-
-            if (levens == 0)
-            {
-                endGame(); // het spel stopt als flappy bird 0 levens heeft
-            }
-            if (score > +5)
-            {
-                pipeSpeed = 6 + 2;
-            }
-
+            } 
 
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
-        }
+        }  
     }
 }
 

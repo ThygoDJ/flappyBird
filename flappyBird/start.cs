@@ -22,6 +22,7 @@ namespace flappyBird
             form2 gamescherm = new form2();
             gamescherm.ShowDialog();
             Close();
+            
         }
     }
 }

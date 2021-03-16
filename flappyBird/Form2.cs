@@ -64,20 +64,26 @@ namespace flappyBird
             eindscore = eindscore + score;
             if (levens == 0)
             {
-                scoreText.Text = "eind score: " + eindscore.ToString();
+                eindScoreText.Text = "Eind score: " + eindscore.ToString();
             }
-            else
-            {
-                eindscores eindscorescherm = new eindscores();
-                eindscorescherm.ShowDialog();
-            }
+            
         }
 
         private void resetGame() // hierdoor zal de game compleet opnieuw gaan
         {
+            flappyBird.Left = 106;
+            flappyBird.Top = 244;
+            
+            buisB.Left = 679;
+            buisB.Top = -258;
+
+            BuisO.Left = 679;
+            BuisO.Top = 448;
+
+            
             score = 0;
 
-            pipeSpeed = 10;
+            pipeSpeed = 6;
 
             score5 = 5;
  

@@ -12,15 +12,6 @@ namespace flappyBird
 {
     public partial class eind : Form
     {
-             // Variabelen
-
-            int pipeSpeed = 6; // snelheid aangegeven met getal
-            int gravity = 8; // gravity aangegeven met getal
-            int score = 0; // standaard score 0
-            int levens = 3; // het aantal levens van flappy bird           
-            int eindscore = 0;// uiteindelijke score
-            int score5 = 5;
-            // einde variabelen
             
         public eind()
         {

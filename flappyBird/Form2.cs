@@ -123,7 +123,11 @@ namespace flappyBird
                 levens = levens - 1;
                 endGame();
 
-
+                if (levens == 2)
+                {
+                    this.leven3.BackColor = System.Drawing.Color.Red;
+                    levensText2.Text = "levens over: 2";
+                }
             }
             if (score == score5)
             {

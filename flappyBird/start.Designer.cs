@@ -37,7 +37,7 @@ namespace flappyBird
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Impact", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(339, 457);
+            this.button1.Location = new System.Drawing.Point(365, 439);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(239, 97);
             this.button1.TabIndex = 20;
@@ -51,7 +51,7 @@ namespace flappyBird
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(206, 273);
+            this.label1.Location = new System.Drawing.Point(220, 263);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(485, 117);
             this.label1.TabIndex = 21;

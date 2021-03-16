@@ -68,7 +68,8 @@ namespace flappyBird
             }
             else
             {
-               eindscoreText.Text = " score: " + eindscore.ToString();
+                eindscores eindscorescherm = new eindscores();
+                eindscorescherm.ShowDialog();
             }
         }
 
@@ -116,7 +117,7 @@ namespace flappyBird
             {
                 // als hij word geraakt gaat er een leven af
                 levens = levens - 1;
-                endGame();
+                gameTimer.Stop();
 
                 if (levens == 2)
                 {
@@ -126,6 +127,23 @@ namespace flappyBird
                     resetGame();
                     gameTimer.Start();
                  
+                }
+                if (levens == 1)
+                {
+                    eind eindscherm = new eind(levens, score);
+                    eindscherm.ShowDialog();
+
+                    resetGame();
+                    gameTimer.Start();
+
+                }
+                if (levens == 0)
+                {
+                    eindscores opnieuwSpelen = new eindscores();
+                    opnieuwSpelen.ShowDialog();
+
+                    endGame();
+                  
                 }
             }
             if (score == score5)

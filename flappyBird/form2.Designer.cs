@@ -100,9 +100,9 @@
             this.flappyBird.BackColor = System.Drawing.Color.Transparent;
             this.flappyBird.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flappyBird.Image = ((System.Drawing.Image)(resources.GetObject("flappyBird.Image")));
-            this.flappyBird.Location = new System.Drawing.Point(106, 208);
+            this.flappyBird.Location = new System.Drawing.Point(106, 244);
             this.flappyBird.Name = "flappyBird";
-            this.flappyBird.Size = new System.Drawing.Size(122, 128);
+            this.flappyBird.Size = new System.Drawing.Size(90, 92);
             this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.flappyBird.TabIndex = 12;
             this.flappyBird.TabStop = false;

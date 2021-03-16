@@ -173,6 +173,16 @@ namespace flappyBird.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap opnieuw_spelen {
+            get {
+                object obj = ResourceManager.GetObject("opnieuw spelen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pipeDown {
             get {
                 object obj = ResourceManager.GetObject("pipeDown", resourceCulture);

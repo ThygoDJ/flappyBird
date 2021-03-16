@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace flappyBird
 {
-    public partial class start : Form
+    public partial class eindscores : Form
     {
-        public start()
+        public eindscores()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            form2 gamescherm = new form2();
-            gamescherm.ShowDialog();
+            start opnieuwSpelen = new start();
+            opnieuwSpelen.ShowDialog();
             Close();
         }
     }

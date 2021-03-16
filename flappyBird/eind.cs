@@ -13,10 +13,10 @@ namespace flappyBird
     public partial class eind : Form
     {
             
-        public eind(int numberOfLives, int eindScore)
+        public eind(int numberOfLives, int Score)
         {
             InitializeComponent();
-            scoreText.Text = "Eind score:" + eindScore.ToString();
+            scoreText.Text = "Eind score:" + Score.ToString();
             levensText2.Text = "Aantal levens; "  + numberOfLives.ToString();
         }
 

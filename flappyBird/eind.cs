@@ -32,5 +32,10 @@ namespace flappyBird
         {
             resetGame();
         }
+
+        private void leven3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

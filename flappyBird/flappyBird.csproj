@@ -164,5 +164,20 @@
   <ItemGroup>
     <None Include="Resources\hartje.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlappyBirdMerchandiser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opnieuw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game over %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\achtergrpnd blauw[16].png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

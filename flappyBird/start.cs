@@ -19,7 +19,8 @@ namespace flappyBird
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gametimerevent.Start();
+            form2 gamescherm = new form2();
+            gamescherm.ShowDialog();
         }
     }
 }

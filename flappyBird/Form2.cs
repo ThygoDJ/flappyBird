@@ -68,23 +68,18 @@ namespace flappyBird
             }
             else
             {
-                eindscoreText.Text = " score: " + eindscore.ToString();
+               eindscoreText.Text = " score: " + eindscore.ToString();
             }
         }
 
         private void resetGame() // hierdoor zal de game compleet opnieuw gaan
         {
-
-
             score = 0;
 
             pipeSpeed = 10;
 
             score5 = 5;
-
-            buisB.Hide();
-            BuisO.Hide();
-           
+ 
         }
 
         private void gameTimerEvent(object sender, EventArgs e)
@@ -125,8 +120,12 @@ namespace flappyBird
 
                 if (levens == 2)
                 {
-                    this.leven3.BackColor = System.Drawing.Color.Red;
-                    levensText2.Text = "levens over: 2";
+                    eind eindscherm = new eind(levens, score);
+                    eindscherm.ShowDialog();
+                    
+                    resetGame();
+                    gameTimer.Start();
+                 
                 }
             }
             if (score == score5)

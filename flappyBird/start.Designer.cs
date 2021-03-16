@@ -77,7 +77,7 @@ namespace flappyBird
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::flappyBird.Properties.Resources.flappy_bird_background_4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(922, 812);
+            this.ClientSize = new System.Drawing.Size(922, 731);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

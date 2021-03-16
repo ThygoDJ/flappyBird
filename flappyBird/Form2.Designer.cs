@@ -54,6 +54,7 @@
             // levensText
             // 
             this.levensText.AutoSize = true;
+            this.levensText.BackColor = System.Drawing.Color.Transparent;
             this.levensText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.levensText.ForeColor = System.Drawing.SystemColors.Window;
             this.levensText.Location = new System.Drawing.Point(14, 88);
@@ -65,6 +66,7 @@
             // scoreText
             // 
             this.scoreText.AutoSize = true;
+            this.scoreText.BackColor = System.Drawing.Color.Transparent;
             this.scoreText.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreText.ForeColor = System.Drawing.SystemColors.Window;
             this.scoreText.Location = new System.Drawing.Point(14, 28);
@@ -98,9 +100,9 @@
             this.flappyBird.BackColor = System.Drawing.Color.Transparent;
             this.flappyBird.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flappyBird.Image = ((System.Drawing.Image)(resources.GetObject("flappyBird.Image")));
-            this.flappyBird.Location = new System.Drawing.Point(46, 170);
+            this.flappyBird.Location = new System.Drawing.Point(106, 244);
             this.flappyBird.Name = "flappyBird";
-            this.flappyBird.Size = new System.Drawing.Size(98, 104);
+            this.flappyBird.Size = new System.Drawing.Size(90, 92);
             this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.flappyBird.TabIndex = 12;
             this.flappyBird.TabStop = false;
@@ -119,7 +121,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BackgroundImage = global::flappyBird.Properties.Resources.achtergrpnd_blauw_16_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 754);
             this.Controls.Add(this.scoreText);
@@ -128,6 +131,7 @@
             this.Controls.Add(this.BuisO);
             this.Controls.Add(this.flappyBird);
             this.Controls.Add(this.buisB);
+            this.DoubleBuffered = true;
             this.Name = "form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

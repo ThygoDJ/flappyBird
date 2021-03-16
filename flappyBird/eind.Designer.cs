@@ -29,7 +29,7 @@ namespace flappyBird
         /// </summary>
         private void InitializeComponent()
         {
-            this.eindscoreText = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.levensText2 = new System.Windows.Forms.Label();
             this.leven3 = new System.Windows.Forms.PictureBox();
@@ -43,24 +43,24 @@ namespace flappyBird
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // eindscoreText
+            // scoreText
             // 
-            this.eindscoreText.AutoSize = true;
-            this.eindscoreText.BackColor = System.Drawing.Color.Transparent;
-            this.eindscoreText.Font = new System.Drawing.Font("Impact", 22.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eindscoreText.Location = new System.Drawing.Point(0, 559);
-            this.eindscoreText.Name = "eindscoreText";
-            this.eindscoreText.Size = new System.Drawing.Size(325, 71);
-            this.eindscoreText.TabIndex = 4;
-            this.eindscoreText.Text = "Eindscore: 0";
+            this.scoreText.AutoSize = true;
+            this.scoreText.BackColor = System.Drawing.Color.Transparent;
+            this.scoreText.Font = new System.Drawing.Font("Impact", 22.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.Location = new System.Drawing.Point(0, 559);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(225, 71);
+            this.scoreText.TabIndex = 4;
+            this.scoreText.Text = "Score: 0";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::flappyBird.Properties.Resources.game_over__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(128, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(112, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(612, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(704, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -78,6 +78,7 @@ namespace flappyBird
             // 
             // leven3
             // 
+            this.leven3.BackColor = System.Drawing.Color.Transparent;
             this.leven3.Image = global::flappyBird.Properties.Resources.hartje;
             this.leven3.Location = new System.Drawing.Point(541, 292);
             this.leven3.Name = "leven3";
@@ -89,6 +90,7 @@ namespace flappyBird
             // 
             // leven1
             // 
+            this.leven1.BackColor = System.Drawing.Color.Transparent;
             this.leven1.Image = global::flappyBird.Properties.Resources.hartje;
             this.leven1.Location = new System.Drawing.Point(206, 292);
             this.leven1.Name = "leven1";
@@ -99,6 +101,7 @@ namespace flappyBird
             // 
             // leven2
             // 
+            this.leven2.BackColor = System.Drawing.Color.Transparent;
             this.leven2.Image = global::flappyBird.Properties.Resources.hartje;
             this.leven2.Location = new System.Drawing.Point(375, 292);
             this.leven2.Name = "leven2";
@@ -131,7 +134,7 @@ namespace flappyBird
             this.Controls.Add(this.leven1);
             this.Controls.Add(this.leven3);
             this.Controls.Add(this.levensText2);
-            this.Controls.Add(this.eindscoreText);
+            this.Controls.Add(this.scoreText);
             this.Controls.Add(this.pictureBox1);
             this.Name = "eind";
             this.Text = "eind";
@@ -146,7 +149,7 @@ namespace flappyBird
         }
 
         #endregion
-        private System.Windows.Forms.Label eindscoreText;
+        private System.Windows.Forms.Label scoreText;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label levensText2;
         private System.Windows.Forms.PictureBox leven3;

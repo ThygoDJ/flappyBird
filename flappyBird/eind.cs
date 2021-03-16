@@ -13,24 +13,17 @@ namespace flappyBird
     public partial class eind : Form
     {
             
-        public eind()
+        public eind(int numberOfLives, int eindScore)
         {
             InitializeComponent();
+            scoreText.Text = "Eind score:" + eindScore.ToString();
+            levensText2.Text = "Aantal levens; "  + numberOfLives.ToString();
         }
 
-        private void resetGame() // hierdoor zal de game compleet opnieuw gaan
-        {
-            score = 0;
-
-            pipeSpeed = 10;
-
-            score5 = 5;
-            
-           gameTimerEvent.Start();
-        }
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            resetGame();
+            Close();
         }
 
         private void leven3_Click(object sender, EventArgs e)

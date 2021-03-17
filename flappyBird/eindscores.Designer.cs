@@ -40,7 +40,7 @@ namespace flappyBird
             this.eindScoreText.BackColor = System.Drawing.Color.Transparent;
             this.eindScoreText.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eindScoreText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.eindScoreText.Location = new System.Drawing.Point(172, 66);
+            this.eindScoreText.Location = new System.Drawing.Point(174, 200);
             this.eindScoreText.Name = "eindScoreText";
             this.eindScoreText.Size = new System.Drawing.Size(549, 117);
             this.eindScoreText.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace flappyBird
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // eindscore
+            // eindscores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,7 +68,7 @@ namespace flappyBird
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.eindScoreText);
             this.DoubleBuffered = true;
-            this.Name = "eindscore";
+            this.Name = "eindscores";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

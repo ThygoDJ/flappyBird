@@ -12,15 +12,16 @@ namespace flappyBird
 {
     public partial class eindscores : Form
     {
-        public eindscores()
+        
+        public eindscores(int eindscore)
         {
             InitializeComponent();
+            eindScoreText.Text = "Eind score:" + eindscore.ToString();
         }
-
+       
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            start opnieuwSpelen = new start();
-            opnieuwSpelen.ShowDialog();
             Close();
         }
     }

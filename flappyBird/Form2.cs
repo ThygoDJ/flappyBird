@@ -21,7 +21,7 @@ namespace flappyBird
         int score = 0; // standaard score 0
         int levens = 3; // het aantal levens van flappy bird           
         int eindscore = 0;// uiteindelijke score
-        int score5 = 5;
+        int score5 = 0;
         // einde variabelen
 
         public form2()
@@ -62,109 +62,136 @@ namespace flappyBird
         {
             gameTimer.Stop();
             eindscore = eindscore + score;
-            if (levens == 0)
-            {
-                eindScoreText.Text = "Eind score: " + eindscore.ToString();
-            }
             
+
+            eindscores opnieuwSpelen = new eindscores(eindscore);
+            opnieuwSpelen.ShowDialog();
+            Close();
         }
 
         private void resetGame() // hierdoor zal de game compleet opnieuw gaan
         {
-            flappyBird.Left = 106;
-            flappyBird.Top = 244;
-            
-            buisB.Left = 679;
-            buisB.Top = -258;
-
-            BuisO.Left = 679;
-            BuisO.Top = 448;
-
-            
             score = 0;
 
             pipeSpeed = 6;
 
             score5 = 5;
- 
+
+            flappyBird.Left = 250;
+            flappyBird.Top = 100;
+
+            buisB.Left = 520;
+            buisB.Top = -135;
+
+            buisB2.Left = 10;
+            buisB2.Top = -135;
+
+            BuisO.Left = 520; 
+            BuisO.Top = 250;
+
+            buisO2.Left = 10;
+            buisO2.Top = 250;
+            
+            gameTimer.Start();
         }
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
             flappyBird.Top += gravity; // hierdoor krijgt de flappybird gravity en snelheid
             BuisO.Left -= pipeSpeed;  // dit is de snelheid van de buis die dichterbij komt als je spatie drukt 
-            buisB.Left -= pipeSpeed; // dit is de snelheid van de buis die dichterbij komt als je spatie drukt
+            buisB.Left -= pipeSpeed;// dit is de snelheid van de buis die dichterbij komt als je spatie drukt
+            buisO2.Left -= pipeSpeed;  // dit is de snelheid van de buis die dichterbij komt als je spatie drukt 
+            buisB2.Left -= pipeSpeed;
             scoreText.Text = "Score: " + score.ToString(); // dit houd de score bij
             levensText.Text = "levens:" + levens.ToString(); // als hij dood gaat leven eraf
 
 
             var number = new Random();
 
-            if (BuisO.Left < -150)
-            {
-                int nummer = number.Next(700, 800); // dit zorgt ervoor dat de buis random spawnt
-
-                BuisO.Left = nummer; // als de buis op -150 is gaat hij weer tussen 700 en 800 
-            }
 
             if (buisB.Left < -150)
             {
-                int nummer = number.Next(700, 800);// dit zorgt ervoor dat de buis random spawnt
+                // waarde bovenste buis
+                int topBoven = number.Next(-190, -70);
+                int leftboven = number.Next(700, 800);
 
+                //waarden onderste buis
+                int leftOnder = number.Next(700, 800);
+                int topOnder = number.Next(240, 430);
 
-                buisB.Left = nummer; // ls de buis op -180 is gaat hij weer tussen 700 en 800 en er komt 1 punt bij de score
-                score++;
-            }
+                //dit zorgt voor de ruimte tussen de buis
+                int ruimte = topOnder - 280;
+                int ruimte2 = topBoven + 245;
 
-            if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
+                // dit is de ruimte tussen de buizen
+                int totaleruimte = ruimte - ruimte2;
+
+                if ((totaleruimte < 0) == true)
+                {
+                    // waarde waar de eerste bovenste buis komt als de ruimte kleiner is dan 0
+                    buisB.Left = 800;
+                    buisB.Top = -150;
+
+                    // waarde waar de eerste onderste buis komt als de ruimte kleiner is dan 0
+                    BuisO.Left = leftOnder;
+                    BuisO.Top = 250;
+                }
+
+                if ((totaleruimte < 0) == false)
+                {
+                    // waarde waar de bovenste buis komt als de ruimte nie kleiner is dan 0
+                    buisB.Left = leftboven;
+                    buisB.Top = topBoven;
+                }
+
+                if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
                 flappyBird.Bounds.IntersectsWith(buisB.Bounds) ||
                 flappyBird.Bounds.IntersectsWith(Grond.Bounds) || flappyBird.Top < -25
               ) // dit zorgt ervoor wanneer flappy bird een buis of de grond raakt hij verder gaat in het if statement
-            {
-                // als hij word geraakt gaat er een leven af
-                levens = levens - 1;
-                gameTimer.Stop();
-
-                if (levens == 2)
                 {
-                    eind eindscherm = new eind(levens, score);
-                    eindscherm.ShowDialog();
-                    
-                    resetGame();
-                    gameTimer.Start();
-                 
+                    // als hij word geraakt gaat er een leven af
+                    levens = levens - 1;
+                    gameTimer.Stop();
+
+                    if (levens == 2)
+                    {
+                        eind eindscherm = new eind(levens, score);
+                        eindscherm.ShowDialog();
+
+                        resetGame();
+                        gameTimer.Start();
+
+                    }
+                    if (levens == 1)
+                    {
+                        eind eindscherm = new eind(levens, score);
+                        eindscherm.ShowDialog();
+
+                        resetGame();
+                        gameTimer.Start();
+
+                    }
+                    if (levens == 0)
+                    {
+                        endGame();
+
+                    }
                 }
-                if (levens == 1)
+                if (score == score5)
                 {
-                    eind eindscherm = new eind(levens, score);
-                    eindscherm.ShowDialog();
-
-                    resetGame();
-                    gameTimer.Start();
+                    pipeSpeed = pipeSpeed += 1;
+                    score5 = score5 + 5;
 
                 }
-                if (levens == 0)
-                {
-                    eindscores opnieuwSpelen = new eindscores();
-                    opnieuwSpelen.ShowDialog();
 
-                    endGame();
-                  
-                }
             }
-            if (score == score5)
-            {
-                pipeSpeed = pipeSpeed + 1;
-                score5 = score5 + 5;
-
-            } 
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void form2_Load(object sender, EventArgs e)
         {
 
-        }  
+        }
     }
 }
 

@@ -39,10 +39,14 @@
             this.BuisO = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.buisB = new System.Windows.Forms.PictureBox();
+            this.buisB2 = new System.Windows.Forms.PictureBox();
+            this.buisO2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buisB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisB2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisO2)).BeginInit();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -117,6 +121,26 @@
             this.buisB.TabIndex = 9;
             this.buisB.TabStop = false;
             // 
+            // buisB2
+            // 
+            this.buisB2.Image = ((System.Drawing.Image)(resources.GetObject("buisB2.Image")));
+            this.buisB2.Location = new System.Drawing.Point(1594, -348);
+            this.buisB2.Name = "buisB2";
+            this.buisB2.Size = new System.Drawing.Size(104, 486);
+            this.buisB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buisB2.TabIndex = 18;
+            this.buisB2.TabStop = false;
+            // 
+            // buisO2
+            // 
+            this.buisO2.Image = global::flappyBird.Properties.Resources.pipeUp1;
+            this.buisO2.Location = new System.Drawing.Point(1594, 386);
+            this.buisO2.Name = "buisO2";
+            this.buisO2.Size = new System.Drawing.Size(104, 532);
+            this.buisO2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buisO2.TabIndex = 19;
+            this.buisO2.TabStop = false;
+            // 
             // form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -124,7 +148,9 @@
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.BackgroundImage = global::flappyBird.Properties.Resources.achtergrpnd_blauw_16_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(980, 754);
+            this.ClientSize = new System.Drawing.Size(982, 724);
+            this.Controls.Add(this.buisO2);
+            this.Controls.Add(this.buisB2);
             this.Controls.Add(this.scoreText);
             this.Controls.Add(this.levensText);
             this.Controls.Add(this.Grond);
@@ -134,13 +160,15 @@
             this.DoubleBuffered = true;
             this.Name = "form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
             ((System.ComponentModel.ISupportInitialize)(this.Grond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buisB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisB2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisO2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +182,8 @@
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label levensText;
         private System.Windows.Forms.Label scoreText;
+        private System.Windows.Forms.PictureBox buisB2;
+        private System.Windows.Forms.PictureBox buisO2;
     }
 }
 

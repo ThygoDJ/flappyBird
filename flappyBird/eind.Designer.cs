@@ -86,7 +86,6 @@ namespace flappyBird
             this.leven3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.leven3.TabIndex = 7;
             this.leven3.TabStop = false;
-            this.leven3.Click += new System.EventHandler(this.leven3_Click);
             // 
             // leven1
             // 
@@ -120,7 +119,7 @@ namespace flappyBird
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // eind
             // 

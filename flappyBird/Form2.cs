@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace flappyBird
 {
-    
 
     public partial class form2 : Form
     {
-        
+
         // Variabelen
 
         int pipeSpeed = 6; // snelheid aangegeven met getal
@@ -28,8 +27,8 @@ namespace flappyBird
         {
             InitializeComponent();
             TimeSpan sleep = TimeSpan.FromMilliseconds(90);
-            
-            
+
+
         }
 
 
@@ -56,13 +55,13 @@ namespace flappyBird
             }
 
         }
-        
-        
+
+
         private void endGame()
         {
             gameTimer.Stop();
             eindscore = eindscore + score;
-            
+
 
             eindscores opnieuwSpelen = new eindscores(eindscore);
             opnieuwSpelen.ShowDialog();
@@ -86,12 +85,12 @@ namespace flappyBird
             buisB2.Left = 10;
             buisB2.Top = -135;
 
-            BuisO.Left = 520; 
+            BuisO.Left = 520;
             BuisO.Top = 250;
 
             buisO2.Left = 10;
             buisO2.Top = 250;
-            
+
             gameTimer.Start();
         }
 
@@ -146,7 +145,9 @@ namespace flappyBird
 
                 if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
                 flappyBird.Bounds.IntersectsWith(buisB.Bounds) ||
-                flappyBird.Bounds.IntersectsWith(Grond.Bounds) || flappyBird.Top < -25
+                flappyBird.Bounds.IntersectsWith(buisO2.Bounds) ||
+                flappyBird.Bounds.IntersectsWith(buisB2.Bounds) ||
+                flappyBird.Bounds.IntersectsWith(grond.Bounds) || flappyBird.Top < -25
               ) // dit zorgt ervoor wanneer flappy bird een buis of de grond raakt hij verder gaat in het if statement
                 {
                     // als hij word geraakt gaat er een leven af
@@ -188,7 +189,9 @@ namespace flappyBird
 
         }
 
-        private void form2_Load(object sender, EventArgs e)
+        
+
+        private void form2_Load_1(object sender, EventArgs e)
         {
 
         }

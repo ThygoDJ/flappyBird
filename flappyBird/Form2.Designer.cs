@@ -114,7 +114,7 @@
             // buisB2
             // 
             this.buisB2.Image = ((System.Drawing.Image)(resources.GetObject("buisB2.Image")));
-            this.buisB2.Location = new System.Drawing.Point(1556, -139);
+            this.buisB2.Location = new System.Drawing.Point(1546, -355);
             this.buisB2.Name = "buisB2";
             this.buisB2.Size = new System.Drawing.Size(104, 486);
             this.buisB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -124,7 +124,7 @@
             // buisO2
             // 
             this.buisO2.Image = global::flappyBird.Properties.Resources.pipeUp1;
-            this.buisO2.Location = new System.Drawing.Point(1556, 552);
+            this.buisO2.Location = new System.Drawing.Point(1546, 364);
             this.buisO2.Name = "buisO2";
             this.buisO2.Size = new System.Drawing.Size(104, 532);
             this.buisO2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.BackgroundImage = global::flappyBird.Properties.Resources.achtergrpnd_blauw_16_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(984, 748);
+            this.ClientSize = new System.Drawing.Size(916, 786);
             this.Controls.Add(this.grond);
             this.Controls.Add(this.buisO2);
             this.Controls.Add(this.buisB2);
@@ -160,7 +160,7 @@
             this.DoubleBuffered = true;
             this.Name = "form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.form2_Load_1);
+            this.Load += new System.EventHandler(this.form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).EndInit();

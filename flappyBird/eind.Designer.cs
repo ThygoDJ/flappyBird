@@ -75,6 +75,7 @@ namespace flappyBird
             this.levensText2.Size = new System.Drawing.Size(365, 71);
             this.levensText2.TabIndex = 6;
             this.levensText2.Text = "Levens over: 3";
+            
             // 
             // leven3
             // 

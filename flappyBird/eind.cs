@@ -19,11 +19,23 @@ namespace flappyBird
             InitializeComponent();
             scoreText.Text = "score:" + Score.ToString();
             levensText2.Text = "Aantal levens:" + levens.ToString();
+
+            if(levens == 2)
+            {
+                leven3.Hide();
+            }
+            if (levens == 1)
+            {
+                leven3.Hide();
+                leven2.Hide();
+            }
         }
        
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        
     }
 }

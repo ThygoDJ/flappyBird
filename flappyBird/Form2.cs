@@ -109,13 +109,13 @@ namespace flappyBird
 
             var number = new Random();
 
-            if (buisB2.Left < -150) // als de buis voorbij de waarde -150 is zal hij het onderstaande uitvoeren uitvoeren
+            if (buisB    .Left < -150) // als de buis voorbij de waarde -150 is zal hij het onderstaande uitvoeren uitvoeren
             {
                 int nummer1 = number.Next(200, 300); // nummer1 zorgt nu voor een random waarde tussen 
                 int nummer2 = number.Next(650, 750); // nummer2 zorgt nu voor een random waarde tussen
                 int nummer3 = number.Next(-200, -120); // nummer3 zorgt nu voor een random waarde tussen
 
-                
+                 
 
                 buisB.Left = 750; 
                 buisB.Top = nummer3;
@@ -125,7 +125,7 @@ namespace flappyBird
                 
                 score++; 
             }
-
+              
             if (buisB2.Left < -150)
             {
                 int nummer1 = number.Next(200, 300); // nummer1 zorgt nu voor een random waarde tussen 

@@ -35,14 +35,18 @@
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.levensText = new System.Windows.Forms.Label();
             this.scoreText = new System.Windows.Forms.Label();
-            this.Grond = new System.Windows.Forms.PictureBox();
             this.BuisO = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.buisB = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Grond)).BeginInit();
+            this.buisB2 = new System.Windows.Forms.PictureBox();
+            this.buisO2 = new System.Windows.Forms.PictureBox();
+            this.grond = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buisB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisB2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisO2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grond)).BeginInit();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -75,16 +79,6 @@
             this.scoreText.TabIndex = 17;
             this.scoreText.Text = "Score: 0";
             // 
-            // Grond
-            // 
-            this.Grond.Image = ((System.Drawing.Image)(resources.GetObject("Grond.Image")));
-            this.Grond.Location = new System.Drawing.Point(-44, 632);
-            this.Grond.Name = "Grond";
-            this.Grond.Size = new System.Drawing.Size(1030, 238);
-            this.Grond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Grond.TabIndex = 15;
-            this.Grond.TabStop = false;
-            // 
             // BuisO
             // 
             this.BuisO.Image = global::flappyBird.Properties.Resources.pipeUp1;
@@ -94,6 +88,7 @@
             this.BuisO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BuisO.TabIndex = 14;
             this.BuisO.TabStop = false;
+           
             // 
             // flappyBird
             // 
@@ -117,6 +112,36 @@
             this.buisB.TabIndex = 9;
             this.buisB.TabStop = false;
             // 
+            // buisB2
+            // 
+            this.buisB2.Image = ((System.Drawing.Image)(resources.GetObject("buisB2.Image")));
+            this.buisB2.Location = new System.Drawing.Point(1546, -355);
+            this.buisB2.Name = "buisB2";
+            this.buisB2.Size = new System.Drawing.Size(104, 486);
+            this.buisB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buisB2.TabIndex = 18;
+            this.buisB2.TabStop = false;
+            // 
+            // buisO2
+            // 
+            this.buisO2.Image = global::flappyBird.Properties.Resources.pipeUp1;
+            this.buisO2.Location = new System.Drawing.Point(1546, 364);
+            this.buisO2.Name = "buisO2";
+            this.buisO2.Size = new System.Drawing.Size(104, 532);
+            this.buisO2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buisO2.TabIndex = 19;
+            this.buisO2.TabStop = false;
+            // 
+            // grond
+            // 
+            this.grond.Image = ((System.Drawing.Image)(resources.GetObject("grond.Image")));
+            this.grond.Location = new System.Drawing.Point(-19, 607);
+            this.grond.Name = "grond";
+            this.grond.Size = new System.Drawing.Size(1030, 238);
+            this.grond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.grond.TabIndex = 20;
+            this.grond.TabStop = false;
+            // 
             // form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -124,23 +149,28 @@
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.BackgroundImage = global::flappyBird.Properties.Resources.achtergrpnd_blauw_16_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(980, 754);
+            this.ClientSize = new System.Drawing.Size(916, 786);
+            this.Controls.Add(this.grond);
+            this.Controls.Add(this.buisO2);
+            this.Controls.Add(this.buisB2);
             this.Controls.Add(this.scoreText);
             this.Controls.Add(this.levensText);
-            this.Controls.Add(this.Grond);
             this.Controls.Add(this.BuisO);
             this.Controls.Add(this.flappyBird);
             this.Controls.Add(this.buisB);
             this.DoubleBuffered = true;
             this.Name = "form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
-            ((System.ComponentModel.ISupportInitialize)(this.Grond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buisB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisB2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buisO2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grond)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,10 +180,12 @@
         private System.Windows.Forms.PictureBox buisB;
         private System.Windows.Forms.PictureBox flappyBird;
         private System.Windows.Forms.PictureBox BuisO;
-        private System.Windows.Forms.PictureBox Grond;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label levensText;
         private System.Windows.Forms.Label scoreText;
+        private System.Windows.Forms.PictureBox buisB2;
+        private System.Windows.Forms.PictureBox buisO2;
+        private System.Windows.Forms.PictureBox grond;
     }
 }
 

@@ -69,7 +69,9 @@ namespace flappyBird
             this.Controls.Add(this.eindScoreText);
             this.DoubleBuffered = true;
             this.Name = "eindscores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.eindscores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

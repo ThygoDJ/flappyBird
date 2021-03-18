@@ -88,6 +88,7 @@
             this.BuisO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BuisO.TabIndex = 14;
             this.BuisO.TabStop = false;
+           
             // 
             // flappyBird
             // 
@@ -159,6 +160,7 @@
             this.Controls.Add(this.buisB);
             this.DoubleBuffered = true;
             this.Name = "form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);

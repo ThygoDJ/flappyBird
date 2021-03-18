@@ -14,10 +14,10 @@ namespace flappyBird
     {
 
 
-        public eind(int levens, int Score)
+        public eind(int levens, int eindScore)
         {
             InitializeComponent();
-            scoreText.Text = "score:" + Score.ToString();
+            scoreText.Text = "score:" + eindScore.ToString();
             levensText2.Text = "Aantal levens:" + levens.ToString();
 
             if(levens == 2)

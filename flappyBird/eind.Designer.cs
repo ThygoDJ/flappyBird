@@ -75,7 +75,6 @@ namespace flappyBird
             this.levensText2.Size = new System.Drawing.Size(365, 71);
             this.levensText2.TabIndex = 6;
             this.levensText2.Text = "Levens over: 3";
-            
             // 
             // leven3
             // 
@@ -137,6 +136,7 @@ namespace flappyBird
             this.Controls.Add(this.scoreText);
             this.Controls.Add(this.pictureBox1);
             this.Name = "eind";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eind";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leven3)).EndInit();

@@ -24,5 +24,10 @@ namespace flappyBird
         {
             Close();
         }
+
+        private void eindscores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

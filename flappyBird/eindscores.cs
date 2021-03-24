@@ -29,5 +29,10 @@ namespace flappyBird
         {
 
         }
+
+        private void eindScoreText_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

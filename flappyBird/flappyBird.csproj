@@ -191,5 +191,8 @@
   <ItemGroup>
     <None Include="Resources\opnieuw spelen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highscorestext.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,26 +13,23 @@ namespace flappyBird
     public partial class eindscores : Form
     {
         
-        public eindscores(int eindscore)
+        public eindscores(int highscore)
         {
             InitializeComponent();
-            eindScoreText.Text = "Eind score:" + eindscore.ToString();
+            eindScoreText.Text = "Eind score:" + highscore.ToString();
         }
        
         
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
 
         private void eindscores_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void eindScoreText_Click(object sender, EventArgs e)
+        private void pictureBox11_Click(object sender, EventArgs e)
         {
-
+          
         }
     }
 }

@@ -16,7 +16,7 @@ namespace flappyBird
         // Variabelen
 
         int pipeSpeed = 6; // snelheid aangegeven met getal
-        int gravity = 8; // gravity aangegeven met getal
+        int gravity = 6; // gravity aangegeven met getal
         int score = 0; // standaard score 0
         int levens = 3; // het aantal levens van flappy bird           
         int eindscore = 0;// uiteindelijke score
@@ -39,7 +39,7 @@ namespace flappyBird
             if (e.KeyCode == Keys.Space)
             {
                 // als je spatie indrukt word de gravity -15
-                gravity = -8;
+                gravity = -6;
             }
         }
 
@@ -50,7 +50,7 @@ namespace flappyBird
             if (e.KeyCode == Keys.Space)
             {
                 // als je de toets los laat word de gravity weer terug gezet naar 15
-                gravity = 8;
+                gravity = 6;
 
             }
 
@@ -72,6 +72,7 @@ namespace flappyBird
             score = 0;
             pipeSpeed = 6;
             score5 = 5;
+            gravity = 6;
             //variabelen
 
             // de plaats waar flappy bird spawnt
@@ -115,7 +116,7 @@ namespace flappyBird
                 int nummer2 = number.Next(650, 750); // nummer2 zorgt nu voor een random waarde tussen
                 int nummer3 = number.Next(-200, -120); // nummer3 zorgt nu voor een random waarde tussen
 
-                 
+                   
 
                 buisB.Left = 750; 
                 buisB.Top = nummer3;

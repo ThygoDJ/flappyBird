@@ -23,5 +23,12 @@ namespace flappyBird
             gamescherm.ShowDialog();
             
         }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            highscores scoreboard = new highscores();
+            scoreboard.showDialog();
+
+        }
     }
 }

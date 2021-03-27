@@ -148,7 +148,7 @@
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.BackgroundImage = global::flappyBird.Properties.Resources.achtergrpnd_blauw_16_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(916, 786);
+            this.ClientSize = new System.Drawing.Size(922, 731);
             this.Controls.Add(this.levensText);
             this.Controls.Add(this.scoreText);
             this.Controls.Add(this.grond);

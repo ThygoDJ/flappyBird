@@ -37,6 +37,9 @@ namespace flappyBird
             {
                 pnlHighscore.Show();
 
+                laagsteScore = 10;
+
+
             }
 
             
@@ -92,7 +95,17 @@ namespace flappyBird
             }
         }
 
+        private void sql()
+        {
+            OpenConnection();
 
+            string insertQuerry = "INSERT INTO highscores.scores(Naam, score) VALUES (@Naam, " + eindScore + ")";
+
+            MySqlCommand cmd = new MySqlCommand(insertQuerry, connection);
+
+            cmd.Parameters.Add("@Naam", MySqlDbType.VarChar, 25);
+            cmd.Parameters["@Naam"].Value = txbNaam.Text;
+        }
 
 
         private void pictureBox11_Click(object sender, EventArgs e)

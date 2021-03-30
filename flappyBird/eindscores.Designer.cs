@@ -44,6 +44,8 @@ namespace flappyBird
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pnlHighscore = new System.Windows.Forms.Panel();
+            this.txbNaam = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -57,6 +59,7 @@ namespace flappyBird
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.pnlHighscore.SuspendLayout();
             this.SuspendLayout();
             // 
             // eindScoreText
@@ -219,11 +222,31 @@ namespace flappyBird
             // 
             this.pnlHighscore.BackgroundImage = global::flappyBird.Properties.Resources.New_High_Score;
             this.pnlHighscore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHighscore.Controls.Add(this.label1);
+            this.pnlHighscore.Controls.Add(this.txbNaam);
             this.pnlHighscore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHighscore.Location = new System.Drawing.Point(0, 0);
             this.pnlHighscore.Name = "pnlHighscore";
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;
+            // 
+            // txbNaam
+            // 
+            this.txbNaam.Location = new System.Drawing.Point(307, 584);
+            this.txbNaam.Multiline = true;
+            this.txbNaam.Name = "txbNaam";
+            this.txbNaam.Size = new System.Drawing.Size(315, 37);
+            this.txbNaam.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(102, 584);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "vul naam in :";
             // 
             // eindscores
             // 
@@ -264,6 +287,8 @@ namespace flappyBird
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.pnlHighscore.ResumeLayout(false);
+            this.pnlHighscore.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +311,7 @@ namespace flappyBird
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Panel pnlHighscore;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbNaam;
     }
 }

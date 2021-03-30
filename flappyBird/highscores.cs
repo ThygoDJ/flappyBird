@@ -31,8 +31,8 @@ namespace flappyBird
                 {
                     AllScores[0][i],
                     AllScores[1][i],
-                    AllScores[2][i]
-                   
+                    AllScores[2][i],
+                    AllScores[3][i]
                 });
                 listView1.Items.Add(newScoreItem );
             }
@@ -91,11 +91,12 @@ namespace flappyBird
         {
             string sqlQuery = "SELECT * FROM scores";
 
-            List<string>[] resultList = new List<string>[3];
+            List<string>[] resultList = new List<string>[4];
             resultList[0] = new List<string>();
             resultList[1] = new List<string>();
             resultList[2] = new List<string>();
-           
+            resultList[3] = new List<string>();
+
             if (this.OpenConnection() == true)
             {
 
@@ -108,7 +109,7 @@ namespace flappyBird
                     resultList[0].Add(dataReader["Plek"] + "");
                     resultList[1].Add(dataReader["Naam"] + "");
                     resultList[2].Add(dataReader["Score"] + "");
-                    
+                    resultList[3].Add(dataReader["Datum/Tijd"] + "");
                 }
 
                 dataReader.Close();

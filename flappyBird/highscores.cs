@@ -9,51 +9,19 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
-namespace flappy_bird
+namespace flappyBird
 {
     public partial class highscores : Form
     {
-
         private MySqlConnection connection;
 
-        private int placement = 1;
-
-        public highscores(int highscore)
+        public highscores()
         {
             InitializeComponent();
 
             InitializeDatabaseConnection();
-
-            lblNaam.Text = "";
-            lblScore.Text = "";
-
-            string sqlQuery = "SELECT * FROM highscore ORDER BY highscore DESC LIMIT 10";
-
-            if (this.OpenConnection() == true)
-            {
-
-                MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
-
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    lblNaam.Text = lblNaam.Text + "plaats: " + placement + dataReader["name"] + "\n\r";
-                    lblScore.Text = lblScore.Text + " score: " + dataReader["score"] + "\n\r";
-                    placement++;
-                }
-
-                dataReader.Close();
-
-                this.CloseConnection();
-
-            }
         }
 
-        private void start_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void InitializeDatabaseConnection()
         {
@@ -70,9 +38,6 @@ namespace flappy_bird
 
         private bool OpenConnection()
         {
-
-            CloseConnection();
-
             try
             {
                 connection.Open();
@@ -107,8 +72,40 @@ namespace flappy_bird
             }
         }
 
-       
+        public List<string>[] GetAll()
+        {
+            string sqlQuery = "SELECT * FROM scores";
+
+            List<string>[] resultList = new List<string>[6];
+            resultList[0] = new List<string>();
+            resultList[1] = new List<string>();
+            resultList[2] = new List<string>();
+           
+            if (this.OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    resultList[0].Add(dataReader["Plek"] + "");
+                    resultList[1].Add(dataReader["Naam"] + "");
+                    resultList[2].Add(dataReader["Score"] + "");
+                    
+                }
+
+                dataReader.Close();
+
+                this.CloseConnection();
+
+                return resultList;
+            }
+            else
+            {
+                return resultList;
+            }
+        }
     }
 }
-        
-    

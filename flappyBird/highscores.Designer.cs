@@ -1,5 +1,5 @@
 ﻿
-namespace flappy_bird
+namespace flappyBird
 {
     partial class highscores
     {
@@ -29,58 +29,80 @@ namespace flappy_bird
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNaam = new System.Windows.Forms.Label();
-            this.lblScore = new System.Windows.Forms.Label();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.start = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Plek = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // lblNaam
-            // 
-            this.lblNaam.AutoSize = true;
-            this.lblNaam.Location = new System.Drawing.Point(165, 250);
-            this.lblNaam.Name = "lblNaam";
-            this.lblNaam.Size = new System.Drawing.Size(70, 25);
-            this.lblNaam.TabIndex = 0;
-            this.lblNaam.Text = "label1";
-            // 
-            // lblScore
-            // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(594, 250);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(70, 25);
-            this.lblScore.TabIndex = 1;
-            this.lblScore.Text = "label2";
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(581, 584);
+            this.start.Location = new System.Drawing.Point(591, 602);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(244, 64);
             this.start.TabIndex = 2;
             this.start.Text = "terug";
             this.start.UseVisualStyleBackColor = true;
+      
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Control;
+            this.listView1.BackgroundImage = global::flappyBird.Properties.Resources.achtergrpnd_blauw_16_;
+            this.listView1.BackgroundImageTiled = true;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Plek,
+            this.Naam,
+            this.Score});
+            this.listView1.HideSelection = false;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.listView1.Location = new System.Drawing.Point(223, 26);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(486, 522);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            
+            // 
+            // Plek
+            // 
+            this.Plek.Text = "plek";
+            this.Plek.Width = 160;
+            // 
+            // Naam
+            // 
+            this.Naam.Text = "Naam";
+            this.Naam.Width = 160;
+            // 
+            // Score
+            // 
+            this.Score.Text = "Score";
+            this.Score.Width = 160;
             // 
             // highscores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::flappyBird.Properties.Resources.flappy_bird_background_4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(922, 731);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.start);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.lblNaam);
             this.Name = "highscores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "highscores";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNaam;
-        private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Button start;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Plek;
+        private System.Windows.Forms.ColumnHeader Naam;
+        private System.Windows.Forms.ColumnHeader Score;
     }
 }

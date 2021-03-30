@@ -29,7 +29,7 @@ namespace flappyBird
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.start = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Plek = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,7 +45,7 @@ namespace flappyBird
             this.start.TabIndex = 2;
             this.start.Text = "terug";
             this.start.UseVisualStyleBackColor = true;
-      
+            this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // listView1
             // 
@@ -58,29 +58,28 @@ namespace flappyBird
             this.Score});
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(223, 26);
+            listViewItem2});
+            this.listView1.Location = new System.Drawing.Point(109, 58);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(486, 522);
+            this.listView1.Size = new System.Drawing.Size(726, 522);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            
             // 
             // Plek
             // 
             this.Plek.Text = "plek";
-            this.Plek.Width = 160;
+            this.Plek.Width = 120;
             // 
             // Naam
             // 
             this.Naam.Text = "Naam";
-            this.Naam.Width = 160;
+            this.Naam.Width = 120;
             // 
             // Score
             // 
             this.Score.Text = "Score";
-            this.Score.Width = 160;
+            this.Score.Width = 120;
             // 
             // highscores
             // 

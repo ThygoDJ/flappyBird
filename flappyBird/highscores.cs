@@ -20,8 +20,23 @@ namespace flappyBird
             InitializeComponent();
 
             InitializeDatabaseConnection();
-        }
 
+            listView1.Items.Clear();
+
+            List<string>[] AllScores = GetAllScores();
+
+            for (int i = 0; i < AllScores[0].Count; i++)
+            {
+                ListViewItem newScoreItem = new ListViewItem(new string[]
+                {
+                    AllScores[0][i],
+                    AllScores[1][i],
+                    AllScores[2][i]
+                   
+                });
+                listView1.Items.Add(newScoreItem );
+            }
+        }
 
         private void InitializeDatabaseConnection()
         {
@@ -72,11 +87,11 @@ namespace flappyBird
             }
         }
 
-        public List<string>[] GetAll()
+        public List<string>[] GetAllScores()
         {
             string sqlQuery = "SELECT * FROM scores";
 
-            List<string>[] resultList = new List<string>[6];
+            List<string>[] resultList = new List<string>[3];
             resultList[0] = new List<string>();
             resultList[1] = new List<string>();
             resultList[2] = new List<string>();
@@ -106,6 +121,11 @@ namespace flappyBird
             {
                 return resultList;
             }
+        }
+
+        private void start_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

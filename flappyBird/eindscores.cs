@@ -29,7 +29,8 @@ namespace flappyBird
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-          
+            highscores scoreboard = new highscores();
+            scoreboard.ShowDialog();
         }
     }
 }

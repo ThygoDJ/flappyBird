@@ -43,6 +43,7 @@ namespace flappyBird
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pnlHighscore = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -214,6 +215,16 @@ namespace flappyBird
             this.pictureBox13.TabIndex = 37;
             this.pictureBox13.TabStop = false;
             // 
+            // pnlHighscore
+            // 
+            this.pnlHighscore.BackgroundImage = global::flappyBird.Properties.Resources.New_High_Score;
+            this.pnlHighscore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHighscore.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHighscore.Location = new System.Drawing.Point(0, 0);
+            this.pnlHighscore.Name = "pnlHighscore";
+            this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
+            this.pnlHighscore.TabIndex = 38;
+            // 
             // eindscores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -221,6 +232,7 @@ namespace flappyBird
             this.BackgroundImage = global::flappyBird.Properties.Resources.game_over_back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(922, 731);
+            this.Controls.Add(this.pnlHighscore);
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
@@ -239,7 +251,6 @@ namespace flappyBird
             this.Name = "eindscores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.eindscores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -274,5 +285,6 @@ namespace flappyBird
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Panel pnlHighscore;
     }
 }

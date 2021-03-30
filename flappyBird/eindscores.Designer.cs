@@ -44,8 +44,8 @@ namespace flappyBird
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pnlHighscore = new System.Windows.Forms.Panel();
-            this.txbNaam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txbNaam = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -84,6 +84,7 @@ namespace flappyBird
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 
@@ -224,19 +225,10 @@ namespace flappyBird
             this.pnlHighscore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlHighscore.Controls.Add(this.label1);
             this.pnlHighscore.Controls.Add(this.txbNaam);
-            this.pnlHighscore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHighscore.Location = new System.Drawing.Point(0, 0);
+            this.pnlHighscore.Location = new System.Drawing.Point(524, 129);
             this.pnlHighscore.Name = "pnlHighscore";
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;
-            // 
-            // txbNaam
-            // 
-            this.txbNaam.Location = new System.Drawing.Point(307, 584);
-            this.txbNaam.Multiline = true;
-            this.txbNaam.Name = "txbNaam";
-            this.txbNaam.Size = new System.Drawing.Size(315, 37);
-            this.txbNaam.TabIndex = 0;
             // 
             // label1
             // 
@@ -247,6 +239,14 @@ namespace flappyBird
             this.label1.Size = new System.Drawing.Size(199, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "vul naam in :";
+            // 
+            // txbNaam
+            // 
+            this.txbNaam.Location = new System.Drawing.Point(307, 584);
+            this.txbNaam.Multiline = true;
+            this.txbNaam.Name = "txbNaam";
+            this.txbNaam.Size = new System.Drawing.Size(315, 37);
+            this.txbNaam.TabIndex = 0;
             // 
             // eindscores
             // 

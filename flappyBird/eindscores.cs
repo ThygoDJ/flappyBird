@@ -19,7 +19,7 @@ namespace flappyBird
 
         private int plaats = 1;
 
-        private int laagsteScore = 0;
+        private int laagsteScoreSpeler = 0;
 
         public eindscores(int highscore)
         {
@@ -29,15 +29,17 @@ namespace flappyBird
             
             pnlHighscore.Hide();
 
-            highscore = eindScore;
+            eindScore = highscore;
 
             eindScoreText.Text = "Eind score:" + highscore.ToString();
 
-            if (highscore > laagsteScore)
+            laagsteScore(1);
+
+            if (highscore > laagsteScoreSpeler)
             {
                 pnlHighscore.Show();
 
-                laagsteScore = 10;
+                laagsteScore = (10);
 
 
             }
@@ -112,6 +114,12 @@ namespace flappyBird
         {
             highscores scoreboard = new highscores();
             scoreboard.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            start hoofdpagina = new start();
+                hoofdpagina.ShowDialog();
         }
     }
 }

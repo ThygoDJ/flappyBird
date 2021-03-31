@@ -13,15 +13,15 @@ namespace flappyBird
 {
     public partial class eindscores : Form
     {
-        private MySqlConnection connection;
-
-        private int eindScore = 0;
+        private int highscore = 0;
 
         private int plaats = 1;
 
         private int laagsteScoreSpeler = 0;
 
-        public eindscores(int highscore)
+        private MySqlConnection connection;
+
+        public eindscores(int eindscore)
         {
             InitializeComponent();
 
@@ -29,17 +29,17 @@ namespace flappyBird
             
             pnlHighscore.Hide();
 
-            eindScore = highscore;
+            highscore = eindscore;
 
             eindScoreText.Text = "Eind score:" + highscore.ToString();
 
-            laagsteScore(1);
+            laagsteScoreSpeler = (1);
 
             if (highscore > laagsteScoreSpeler)
             {
                 pnlHighscore.Show();
 
-                laagsteScore = (10);
+                laagsteScoreSpeler = (10);
 
 
             }
@@ -101,14 +101,92 @@ namespace flappyBird
         {
             OpenConnection();
 
-            string insertQuerry = "INSERT INTO highscores.scores(Naam, score) VALUES (@Naam, " + eindScore + ")";
+            string insertQuerry = "INSERT INTO highscores.scores(Naam, Score) VALUES (@Naam, " + highscore + ")";
 
             MySqlCommand cmd = new MySqlCommand(insertQuerry, connection);
 
             cmd.Parameters.Add("@Naam", MySqlDbType.VarChar, 25);
             cmd.Parameters["@Naam"].Value = txbNaam.Text;
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                txbNaam.Text = "score opgeslagen" + "\r\n";
+
+                pnlHighscore.Hide();
+            }
+
+            CloseConnection();
+
+
+        }
+        private void sqlDelete()
+        {
+            OpenConnection();
+
+            string deleteQuery = "DELETE FROM highscore ORDER BY scores LIMIT 1";
+
+            MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
+
+            cmd.ExecuteNonQuery();
+
+            CloseConnection();
+
         }
 
+        private int laagsteSpelerScore(int amount)
+        {
+            OpenConnection();
+
+            string sqlQuery = "SELECT * FROM highscore ORDER BY Score LIMIT " + amount;
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    string localScore = dataReader["Score" + ""].ToString();
+
+                    laagsteScoreSpeler = Convert.ToInt32(localScore);
+
+                    if (amount == 10)
+                    {
+                        if (laagsteScoreSpeler > highscore)
+                        {
+                            plaats++;
+                        }
+                    }
+                }
+
+                dataReader.Close();
+
+                if (amount == 10)
+                {
+                    return plaats;
+                }
+                else
+                {
+                    return laagsteScoreSpeler;
+                }
+
+                CloseConnection();
+            }
+            else
+            {
+                if (amount == 10)
+                {
+                    return plaats;
+                }
+                else
+                {
+                    return laagsteScoreSpeler;
+                }
+
+                CloseConnection();
+            }
+        }
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
@@ -121,5 +199,7 @@ namespace flappyBird
             start hoofdpagina = new start();
                 hoofdpagina.ShowDialog();
         }
+
+     
     }
 }

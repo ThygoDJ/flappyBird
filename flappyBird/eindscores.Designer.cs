@@ -225,7 +225,7 @@ namespace flappyBird
             this.pnlHighscore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlHighscore.Controls.Add(this.label1);
             this.pnlHighscore.Controls.Add(this.txbNaam);
-            this.pnlHighscore.Location = new System.Drawing.Point(524, 129);
+            this.pnlHighscore.Location = new System.Drawing.Point(385, 43);
             this.pnlHighscore.Name = "pnlHighscore";
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;

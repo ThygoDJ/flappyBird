@@ -26,9 +26,10 @@ namespace flappyBird
         public form2()
         {
             InitializeComponent();
-            TimeSpan sleep = TimeSpan.FromMilliseconds(90);
-
-
+            buisB.Hide();
+            BuisO.Hide();
+            buisB2.Hide();
+            buisO2.Hide();
         }
 
 
@@ -110,7 +111,7 @@ namespace flappyBird
 
             var number = new Random();
 
-            if (buisB    .Left < -150) // als de buis voorbij de waarde -150 is zal hij het onderstaande uitvoeren uitvoeren
+            if (buisB.Left < -150) // als de buis voorbij de waarde -150 is zal hij het onderstaande uitvoeren uitvoeren
             {
                 int nummer1 = number.Next(200, 300); // nummer1 zorgt nu voor een random waarde tussen 
                 int nummer2 = number.Next(650, 750); // nummer2 zorgt nu voor een random waarde tussen
@@ -124,6 +125,11 @@ namespace flappyBird
                 BuisO.Left = nummer2;
                 BuisO.Top = nummer1;
                 
+                if (buisB.Visible != true)
+                {
+                    buisB.Show();
+                    BuisO.Show();
+                }
                 score++; 
             }
               
@@ -139,23 +145,49 @@ namespace flappyBird
                 buisO2.Left = nummer2;
                 buisO2.Top = nummer1;
 
+                if (buisB2.Visible != true)
+                {
+                    buisB2.Show();
+                    buisO2.Show();
+                }
+
                 score++;
             }
 
-           
-            
-
-            if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(buisB.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(buisO2.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(buisB2.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(grond.Bounds) || flappyBird.Top < -25
-          ) // dit zorgt ervoor wanneer flappy bird een buis of de grond raakt hij verder gaat in het if statement
+            if (buisB.Visible && BuisO.Visible == true)
             {
-                levens = levens - 1; // als hij word geraakt gaat er een leven af
+                
+                if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
+                    flappyBird.Bounds.IntersectsWith(buisB.Bounds))
+                {
+                    levens = levens - 1; // als hij word geraakt gaat er een leven af
 
-                eindscore = eindscore + score; // de score gaat bij de eindscore op 
-                gameTimer.Stop();
+                    eindscore = eindscore + score; // de score gaat bij de eindscore op 
+                    gameTimer.Stop();
+                }
+            }
+           
+            if (buisB2.Visible && buisO2.Visible == true)
+            { 
+                
+                if (flappyBird.Bounds.IntersectsWith(buisO2.Bounds) ||
+                    flappyBird.Bounds.IntersectsWith(buisB2.Bounds))
+                {
+                    levens = levens - 1; // als hij word geraakt gaat er een leven af
+
+                    eindscore = eindscore + score; // de score gaat bij de eindscore op 
+                    gameTimer.Stop();
+                }
+
+                if (flappyBird.Bounds.IntersectsWith(grond.Bounds))
+                {
+                    levens = levens - 1; // als hij word geraakt gaat er een leven af
+
+                    eindscore = eindscore + score; // de score gaat bij de eindscore op 
+                    gameTimer.Stop();
+                }
+         
+
 
                 if (levens == 2)
                 {

@@ -13,11 +13,11 @@ namespace flappyBird
 {
     public partial class eindscores : Form
     {
-        private int highscore = 0;
+        private int playerScore = 0;
 
-        private int plaats = 1;
+        private int placement = 1;
 
-        private int laagsteScoreSpeler = 0;
+        private int lowestPlayerScore = 0;
 
         private MySqlConnection connection;
 
@@ -29,22 +29,41 @@ namespace flappyBird
             
             pnlHighscore.Hide();
 
-            highscore = eindscore;
+            playerScore = eindscore;
 
-            eindScoreText.Text = "Eind score:" + highscore.ToString();
+            eindScoreText.Text = "Eind score:" + playerScore.ToString();
 
             
 
-            if (highscore > laagsteScoreSpeler)
+
+            if (playerScore > lowestPlayerScore)
             {
                 pnlHighscore.Show();
 
-                
+
+
+                lowestScore(10);
+
+
+
+                if (placement > 1)
+                {
+                    lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "e geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
+                }
+                else
+                {
+                    lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "st geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
+                }
+
+
+            }
+            else
+            {
+                lblHighScoreInfo.Text = "geen nieuwe highscore behaald" + "\r\n" + "klik hieronder om terug te gaan naar het start scherm";
             }
 
-            
 
-            
+
         }
         private void InitializeDatabaseConnection()
         {
@@ -102,7 +121,7 @@ namespace flappyBird
         {
             OpenConnection();
 
-            string insertQuerry = "INSERT INTO highscores.scores(Naam, Score) VALUES (@Naam, " + highscore + ")";
+            string insertQuerry = "INSERT INTO highscores.scores(Naam, Score) VALUES (@Naam, " + playerScore + ")";
 
             MySqlCommand cmd = new MySqlCommand(insertQuerry, connection);
 
@@ -124,7 +143,7 @@ namespace flappyBird
         {
             OpenConnection();
 
-            string deleteQuery = "DELETE FROM highscores ORDER BY scores LIMIT 1";
+            string deleteQuery = "DELETE FROM scores ORDER BY Score LIMIT 1";
 
             MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
 
@@ -134,12 +153,79 @@ namespace flappyBird
 
         }
 
-        private int laagsteScore()
+        private int lowestScore(int amount)
         {
             OpenConnection();
 
-            string sqlQuery = "SELECT * FROM highscores ORDER BY Score LIMIT ";
 
+
+            string sqlQuery = "SELECT * FROM scores ORDER BY Score LIMIT " + amount;
+
+
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
+
+
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+
+
+                while (dataReader.Read())
+                {
+                    string localScore = dataReader["Score" + ""].ToString();
+
+
+
+                    lowestPlayerScore = Convert.ToInt32(localScore);
+
+
+
+                    if (amount == 10)
+                    {
+                        if (lowestPlayerScore > playerScore)
+                        {
+                            placement++;
+                        }
+                    }
+                }
+
+
+
+                dataReader.Close();
+
+
+
+                if (amount == 10)
+                {
+                    return placement;
+                }
+                else
+                {
+                    return lowestPlayerScore;
+                }
+
+
+
+                CloseConnection();
+            }
+            else
+            {
+                if (amount == 10)
+                {
+                    return placement;
+                }
+                else
+                {
+                    return lowestPlayerScore;
+                }
+
+
+
+                CloseConnection();
+            }
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)

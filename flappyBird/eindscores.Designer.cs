@@ -44,9 +44,10 @@ namespace flappyBird
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pnlHighscore = new System.Windows.Forms.Panel();
+            this.btnOpslaan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txbNaam = new System.Windows.Forms.TextBox();
-            this.btnOpslaan = new System.Windows.Forms.Button();
+            this.lblHighScoreInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -224,6 +225,7 @@ namespace flappyBird
             // 
             this.pnlHighscore.BackgroundImage = global::flappyBird.Properties.Resources.New_High_Score;
             this.pnlHighscore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHighscore.Controls.Add(this.lblHighScoreInfo);
             this.pnlHighscore.Controls.Add(this.btnOpslaan);
             this.pnlHighscore.Controls.Add(this.label1);
             this.pnlHighscore.Controls.Add(this.txbNaam);
@@ -233,11 +235,21 @@ namespace flappyBird
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;
             // 
+            // btnOpslaan
+            // 
+            this.btnOpslaan.Location = new System.Drawing.Point(645, 672);
+            this.btnOpslaan.Name = "btnOpslaan";
+            this.btnOpslaan.Size = new System.Drawing.Size(144, 40);
+            this.btnOpslaan.TabIndex = 2;
+            this.btnOpslaan.Text = "opslaan";
+            this.btnOpslaan.UseVisualStyleBackColor = true;
+            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 584);
+            this.label1.Location = new System.Drawing.Point(66, 675);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 37);
             this.label1.TabIndex = 1;
@@ -245,21 +257,20 @@ namespace flappyBird
             // 
             // txbNaam
             // 
-            this.txbNaam.Location = new System.Drawing.Point(307, 584);
+            this.txbNaam.Location = new System.Drawing.Point(282, 675);
             this.txbNaam.Multiline = true;
             this.txbNaam.Name = "txbNaam";
             this.txbNaam.Size = new System.Drawing.Size(315, 37);
             this.txbNaam.TabIndex = 0;
             // 
-            // btnOpslaan
+            // lblHighScoreInfo
             // 
-            this.btnOpslaan.Location = new System.Drawing.Point(677, 584);
-            this.btnOpslaan.Name = "btnOpslaan";
-            this.btnOpslaan.Size = new System.Drawing.Size(144, 40);
-            this.btnOpslaan.TabIndex = 2;
-            this.btnOpslaan.Text = "opslaan";
-            this.btnOpslaan.UseVisualStyleBackColor = true;
-            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
+            this.lblHighScoreInfo.AutoSize = true;
+            this.lblHighScoreInfo.Location = new System.Drawing.Point(277, 526);
+            this.lblHighScoreInfo.Name = "lblHighScoreInfo";
+            this.lblHighScoreInfo.Size = new System.Drawing.Size(47, 25);
+            this.lblHighScoreInfo.TabIndex = 3;
+            this.lblHighScoreInfo.Text = "info";
             // 
             // eindscores
             // 
@@ -327,5 +338,6 @@ namespace flappyBird
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbNaam;
         private System.Windows.Forms.Button btnOpslaan;
+        private System.Windows.Forms.Label lblHighScoreInfo;
     }
 }

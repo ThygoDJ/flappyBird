@@ -86,6 +86,7 @@
             this.buisB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.buisB.TabIndex = 9;
             this.buisB.TabStop = false;
+            this.buisB.Click += new System.EventHandler(this.buisB_Click);
             // 
             // buisB2
             // 
@@ -161,7 +162,6 @@
             this.Name = "form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.form2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
             ((System.ComponentModel.ISupportInitialize)(this.BuisO)).EndInit();

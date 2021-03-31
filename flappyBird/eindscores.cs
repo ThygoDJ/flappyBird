@@ -167,21 +167,13 @@ namespace flappyBird
             {
                 MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
 
-
-
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
-
-
+               
                 while (dataReader.Read())
                 {
                     string localScore = dataReader["Score" + ""].ToString();
 
-
-
                     lowestPlayerScore = Convert.ToInt32(localScore);
-
-
 
                     if (amount == 10)
                     {
@@ -192,11 +184,7 @@ namespace flappyBird
                     }
                 }
 
-
-
                 dataReader.Close();
-
-
 
                 if (amount == 10)
                 {
@@ -206,8 +194,6 @@ namespace flappyBird
                 {
                     return lowestPlayerScore;
                 }
-
-
 
                 CloseConnection();
             }
@@ -221,8 +207,6 @@ namespace flappyBird
                 {
                     return lowestPlayerScore;
                 }
-
-
 
                 CloseConnection();
             }

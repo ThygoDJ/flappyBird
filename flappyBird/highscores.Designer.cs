@@ -30,6 +30,7 @@ namespace flappyBird
         private void InitializeComponent()
         {
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.start = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Plek = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,8 +60,10 @@ namespace flappyBird
             this.Score,
             this.DatumTijd});
             this.listView1.HideSelection = false;
+            listViewItem2.IndentCount = 1;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem1,
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(88, 48);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(768, 522);

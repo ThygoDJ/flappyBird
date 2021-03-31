@@ -29,11 +29,13 @@ namespace flappyBird
             {
                 ListViewItem newScoreItem = new ListViewItem(new string[]
                 {
-                    AllScores[0][i],
+                    i.ToString(),
                     AllScores[1][i],
-                    AllScores[2][i]
-                    
-                });
+                    AllScores[2][i],
+                    AllScores[3][i],
+                   
+
+                }) ;
                 listView1.Items.Add(newScoreItem );
             }
         }
@@ -91,10 +93,11 @@ namespace flappyBird
         {
             string sqlQuery = "SELECT * FROM scores";
 
-            List<string>[] resultList = new List<string>[3];
+            List<string>[] resultList = new List<string>[4];
             resultList[0] = new List<string>();
             resultList[1] = new List<string>();
             resultList[2] = new List<string>();
+            resultList[3] = new List<string>();
             
 
             if (this.OpenConnection() == true)

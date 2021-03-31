@@ -33,15 +33,13 @@ namespace flappyBird
 
             eindScoreText.Text = "Eind score:" + highscore.ToString();
 
-            laagsteScoreSpeler = (1);
+            
 
             if (highscore > laagsteScoreSpeler)
             {
                 pnlHighscore.Show();
 
-                laagsteScoreSpeler = (10);
-
-
+                
             }
 
             
@@ -63,6 +61,9 @@ namespace flappyBird
 
         private bool OpenConnection()
         {
+
+            CloseConnection();
+
             try
             {
                 connection.Open();
@@ -123,7 +124,7 @@ namespace flappyBird
         {
             OpenConnection();
 
-            string deleteQuery = "DELETE FROM highscore ORDER BY scores LIMIT 1";
+            string deleteQuery = "DELETE FROM highscores ORDER BY scores LIMIT 1";
 
             MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
 
@@ -133,59 +134,12 @@ namespace flappyBird
 
         }
 
-        private int laagsteSpelerScore(int amount)
+        private int laagsteScore()
         {
             OpenConnection();
 
-            string sqlQuery = "SELECT * FROM highscore ORDER BY Score LIMIT " + amount;
+            string sqlQuery = "SELECT * FROM highscores ORDER BY Score LIMIT ";
 
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
-
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    string localScore = dataReader["Score" + ""].ToString();
-
-                    laagsteScoreSpeler = Convert.ToInt32(localScore);
-
-                    if (amount == 10)
-                    {
-                        if (laagsteScoreSpeler > highscore)
-                        {
-                            plaats++;
-                        }
-                    }
-                }
-
-                dataReader.Close();
-
-                if (amount == 10)
-                {
-                    return plaats;
-                }
-                else
-                {
-                    return laagsteScoreSpeler;
-                }
-
-                CloseConnection();
-            }
-            else
-            {
-                if (amount == 10)
-                {
-                    return plaats;
-                }
-                else
-                {
-                    return laagsteScoreSpeler;
-                }
-
-                CloseConnection();
-            }
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -200,6 +154,13 @@ namespace flappyBird
                 hoofdpagina.ShowDialog();
         }
 
-     
+        private void btnOpslaan_Click(object sender, EventArgs e)
+        {
+            sql();
+
+            sqlDelete();
+
+            pnlHighscore.Hide();
+        }
     }
 }

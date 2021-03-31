@@ -46,6 +46,7 @@ namespace flappyBird
             this.pnlHighscore = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbNaam = new System.Windows.Forms.TextBox();
+            this.btnOpslaan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -223,9 +224,11 @@ namespace flappyBird
             // 
             this.pnlHighscore.BackgroundImage = global::flappyBird.Properties.Resources.New_High_Score;
             this.pnlHighscore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHighscore.Controls.Add(this.btnOpslaan);
             this.pnlHighscore.Controls.Add(this.label1);
             this.pnlHighscore.Controls.Add(this.txbNaam);
-            this.pnlHighscore.Location = new System.Drawing.Point(385, 43);
+            this.pnlHighscore.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHighscore.Location = new System.Drawing.Point(0, 0);
             this.pnlHighscore.Name = "pnlHighscore";
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;
@@ -247,6 +250,16 @@ namespace flappyBird
             this.txbNaam.Name = "txbNaam";
             this.txbNaam.Size = new System.Drawing.Size(315, 37);
             this.txbNaam.TabIndex = 0;
+            // 
+            // btnOpslaan
+            // 
+            this.btnOpslaan.Location = new System.Drawing.Point(677, 584);
+            this.btnOpslaan.Name = "btnOpslaan";
+            this.btnOpslaan.Size = new System.Drawing.Size(144, 40);
+            this.btnOpslaan.TabIndex = 2;
+            this.btnOpslaan.Text = "opslaan";
+            this.btnOpslaan.UseVisualStyleBackColor = true;
+            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
             // eindscores
             // 
@@ -313,5 +326,6 @@ namespace flappyBird
         private System.Windows.Forms.Panel pnlHighscore;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbNaam;
+        private System.Windows.Forms.Button btnOpslaan;
     }
 }

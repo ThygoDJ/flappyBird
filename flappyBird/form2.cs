@@ -26,9 +26,11 @@ namespace flappyBird
         public form2()
         {
             InitializeComponent();
-            TimeSpan sleep = TimeSpan.FromMilliseconds(90);
 
-
+            buisB.Hide();
+            BuisO.Hide();
+            buisB2.Hide();
+            buisO2.Hide();
         }
 
 
@@ -63,8 +65,7 @@ namespace flappyBird
             eindscore = eindscore + score;
             eindscores opnieuwSpelen = new eindscores(eindscore);
             opnieuwSpelen.ShowDialog();
-            Close();
-        }
+         }
 
         private void resetGame() // hierdoor zal de game compleet opnieuw gaan
         {
@@ -72,27 +73,31 @@ namespace flappyBird
             score = 0;
             pipeSpeed = 6;
             score5 = 5;
-            gravity = 6;
             //variabelen
+
+            buisB.Show();
+            BuisO.Show();
+            buisB2.Show();
+            buisO2.Show();
 
             // de plaats waar flappy bird spawnt
             flappyBird.Left = 100;
-            flappyBird.Top = 106;
+            flappyBird.Top = 106; 
 
             // dit geeft de plaats aan waar de eerste bovenste buis spawnt
-            buisB.Left = 520;
+            buisB.Left = 520; 
             buisB.Top = -135;
 
             // dit geeft de plaats aan waar de tweede bovenste buis spawnt
-            buisB2.Left = 10;
+            buisB2.Left = 800;
             buisB2.Top = -165;
-            
+
             // dit geeft de plaats aan waar de eerste onderste buis spawnt
             BuisO.Left = 520;
             BuisO.Top = 250;
 
             // dit geeft de plaats aan waar de tweede onderste buis spawnt
-            buisO2.Left = 10;
+            buisO2.Left = 800;
             buisO2.Top = 210;
 
             gameTimer.Start();
@@ -110,89 +115,93 @@ namespace flappyBird
 
             var number = new Random();
 
-            if (buisB    .Left < -150) // als de buis voorbij de waarde -150 is zal hij het onderstaande uitvoeren uitvoeren
+            if (buisB.Left < -150) // als de buis voorbij de waarde -150 is zal hij het onderstaande uitvoeren uitvoeren
             {
                 int nummer1 = number.Next(200, 300); // nummer1 zorgt nu voor een random waarde tussen 
                 int nummer2 = number.Next(650, 750); // nummer2 zorgt nu voor een random waarde tussen
                 int nummer3 = number.Next(-200, -120); // nummer3 zorgt nu voor een random waarde tussen
 
-                   
 
-                buisB.Left = 750; 
+
+                buisB.Left = 750;
                 buisB.Top = nummer3;
 
                 BuisO.Left = nummer2;
                 BuisO.Top = nummer1;
-                
-                score++; 
+
+                if (buisB.Visible != true)
+                {
+                    buisB.Show();
+                    BuisO.Show();
+                }
+                else
+                {
+                    score++;
+                }
             }
-              
+
             if (buisB2.Left < -150)
             {
                 int nummer1 = number.Next(200, 300); // nummer1 zorgt nu voor een random waarde tussen 
                 int nummer2 = number.Next(650, 750); // nummer2 zorgt nu voor een random waarde tussen
                 int nummer3 = number.Next(-200, -120); // nummer3 zorgt nu voor een random waarde tussen
 
-                buisB2.Left = 750; 
+                buisB2.Left = 750;
                 buisB2.Top = nummer3;
 
                 buisO2.Left = nummer2;
                 buisO2.Top = nummer1;
 
-                score++;
+                if (buisB2.Visible != true)
+                {
+                    buisB2.Show();
+                    buisO2.Show();
+                }
+                else
+                {
+                    score++;
+                }
             }
 
-           
-            
+            if (buisB.Visible && BuisO.Visible == true)
+            {
 
-            if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(buisB.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(buisO2.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(buisB2.Bounds) ||
-            flappyBird.Bounds.IntersectsWith(grond.Bounds) || flappyBird.Top < -25
-          ) // dit zorgt ervoor wanneer flappy bird een buis of de grond raakt hij verder gaat in het if statement
+                if (flappyBird.Bounds.IntersectsWith(BuisO.Bounds) ||
+                    flappyBird.Bounds.IntersectsWith(buisB.Bounds))
+                {
+                    levens = levens - 1; // als hij word geraakt gaat er een leven af
+
+                    eindscore = eindscore + score; // de score gaat bij de eindscore op 
+                    gameTimer.Stop();
+                    checklives();
+                }
+            }
+
+            if (buisB2.Visible && buisO2.Visible == true)
+            {
+
+                if (flappyBird.Bounds.IntersectsWith(buisO2.Bounds) ||
+                    flappyBird.Bounds.IntersectsWith(buisB2.Bounds))
+                {
+                    levens = levens - 1; // als hij word geraakt gaat er een leven af
+
+                    eindscore = eindscore + score; // de score gaat bij de eindscore op 
+                    gameTimer.Stop();
+                    checklives();
+                }
+
+            }
+            if (flappyBird.Bounds.IntersectsWith(grond.Bounds))
             {
                 levens = levens - 1; // als hij word geraakt gaat er een leven af
 
                 eindscore = eindscore + score; // de score gaat bij de eindscore op 
                 gameTimer.Stop();
-
-                if (levens == 2)
-                {
-                    this.Hide();
-
-                    // als de levens 2 zijn zal hij naar eindscherm gaan
-                    eind eindscherm = new eind(levens, eindscore);
-                    eindscherm.ShowDialog();
-
-                    this.Show();
-
-                    resetGame();
-                    gameTimer.Start();
-
-                }
-                if (levens == 1)
-                {
-                    this.Hide();
-
-                    // als de levens 1 zijn zal hij naar eindscherm gaan
-                    eind eindscherm = new eind(levens, eindscore);
-                    eindscherm.ShowDialog();
-
-                    this.Show();
-
-                    resetGame();
-                    gameTimer.Start();
-
-                }
-                if (levens == 0)
-                {
-                    this.Hide();
-
-                    endGame();
-
-                }
+                checklives();  
             }
+
+
+
             if (score == score5)
             {
                 pipeSpeed = pipeSpeed += 1;
@@ -200,22 +209,52 @@ namespace flappyBird
 
             }
 
+
+    }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gameTimer.Start();
         }
 
-        private void form2_Load(object sender, EventArgs e)
+        private void buisB_Click(object sender, EventArgs e)
         {
 
         }
+        private void checklives()
+        {
+            if (levens == 2)
+            {
+                this.Hide();
+                gameTimer.Stop();
+                //als de levens 2 zijn zal hij naar eindscherm gaan
+                eind eindscherm = new eind(levens, eindscore);
+                eindscherm.ShowDialog();
 
-        
+                this.Show();
+
+                resetGame();
+            }
+            if (levens == 1)
+            {
+                this.Hide();
+                gameTimer.Stop();
+                // als de levens 1 zijn zal hij naar eindscherm gaan
+                eind eindscherm = new eind(levens, eindscore);
+                eindscherm.ShowDialog();
+
+                this.Show();
+
+                resetGame();
+
+            }
+            if (levens == 0)
+            {
+                this.Hide();
+
+                endGame();
+
+            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-

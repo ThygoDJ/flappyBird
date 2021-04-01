@@ -138,9 +138,9 @@
             this.levensText.ForeColor = System.Drawing.SystemColors.Window;
             this.levensText.Location = new System.Drawing.Point(14, 79);
             this.levensText.Name = "levensText";
-            this.levensText.Size = new System.Drawing.Size(205, 51);
+            this.levensText.Size = new System.Drawing.Size(219, 51);
             this.levensText.TabIndex = 22;
-            this.levensText.Text = "levens: 3";
+            this.levensText.Text = "Levens: 3";
             // 
             // form2
             // 

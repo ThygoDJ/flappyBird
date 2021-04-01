@@ -222,6 +222,8 @@ namespace flappyBird
         {
             start hoofdpagina = new start();
                 hoofdpagina.ShowDialog();
+            
+            Close();
         }
 
         private void btnOpslaan_Click(object sender, EventArgs e)

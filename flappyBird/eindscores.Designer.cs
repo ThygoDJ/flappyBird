@@ -229,8 +229,7 @@ namespace flappyBird
             this.pnlHighscore.Controls.Add(this.btnOpslaan);
             this.pnlHighscore.Controls.Add(this.label1);
             this.pnlHighscore.Controls.Add(this.txbNaam);
-            this.pnlHighscore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHighscore.Location = new System.Drawing.Point(0, 0);
+            this.pnlHighscore.Location = new System.Drawing.Point(632, 164);
             this.pnlHighscore.Name = "pnlHighscore";
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;

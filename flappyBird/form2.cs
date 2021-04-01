@@ -111,7 +111,7 @@ namespace flappyBird
             buisO2.Left -= pipeSpeed;  // dit is de snelheid van de tweede onderste buis 
             buisB2.Left -= pipeSpeed; // dit is de snelheid van de tweede bovenste buis
             scoreText.Text = "Score: " + score.ToString(); // dit houd de score bij
-            levensText.Text = "levens:" + levens.ToString(); // als hij dood gaat leven eraf
+            levensText.Text = "Levens:" + levens.ToString(); // als hij dood gaat leven eraf
 
             var number = new Random();
 

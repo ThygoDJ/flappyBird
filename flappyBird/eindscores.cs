@@ -235,14 +235,6 @@ namespace flappyBird
             pnlHighscore.Hide();
         }
 
-        private void txbNaam_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblHighScoreInfo_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

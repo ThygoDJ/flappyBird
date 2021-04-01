@@ -15,6 +15,8 @@ namespace flappyBird
     {
         private MySqlConnection connection;
 
+        private int plaats = 1;
+
         public highscores()
         {
             InitializeComponent();
@@ -29,13 +31,14 @@ namespace flappyBird
             {
                 ListViewItem newScoreItem = new ListViewItem(new string[]
                 {
-                    i.ToString(),
+                    plaats.ToString(),
+                    AllScores[0][i],
                     AllScores[1][i],
                     AllScores[2][i],
-                    AllScores[3][i],
                    
 
                 }) ;
+                plaats++;
                 listView1.Items.Add(newScoreItem );
             }
         }
@@ -91,14 +94,14 @@ namespace flappyBird
 
         public List<string>[] GetAllScores()
         {
-            string sqlQuery = "SELECT * FROM scores";
+            string sqlQuery = "SELECT * FROM scores ORDER BY Score DESC LIMIT 10";
 
-            List<string>[] resultList = new List<string>[4];
+            List<string>[] resultList = new List<string>[3];
             resultList[0] = new List<string>();
             resultList[1] = new List<string>();
             resultList[2] = new List<string>();
-            resultList[3] = new List<string>();
             
+
 
             if (this.OpenConnection() == true)
             {

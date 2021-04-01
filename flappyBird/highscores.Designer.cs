@@ -29,8 +29,8 @@ namespace flappyBird
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
             this.start = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Plek = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,12 +41,14 @@ namespace flappyBird
             // 
             // start
             // 
+            this.start.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start.Location = new System.Drawing.Point(656, 610);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(244, 64);
             this.start.TabIndex = 2;
             this.start.Text = "terug";
-            this.start.UseVisualStyleBackColor = true;
+            this.start.UseVisualStyleBackColor = false;
             this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // listView1
@@ -60,10 +62,10 @@ namespace flappyBird
             this.Score,
             this.DatumTijd});
             this.listView1.HideSelection = false;
-            listViewItem2.IndentCount = 1;
+            listViewItem4.IndentCount = 1;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem3,
+            listViewItem4});
             this.listView1.Location = new System.Drawing.Point(88, 48);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(768, 522);

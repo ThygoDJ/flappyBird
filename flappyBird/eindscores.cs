@@ -121,7 +121,7 @@ namespace flappyBird
         {
             OpenConnection();
 
-            string insertQuerry = "INSERT INTO highscores.scores(Naam, Score) VALUES (@Naam, " + playerScore + ")";
+            string insertQuerry = "INSERT INTO scores(Naam, Score) VALUES (@Naam, " + playerScore + ")";
 
             MySqlCommand cmd = new MySqlCommand(insertQuerry, connection);
 
@@ -231,6 +231,16 @@ namespace flappyBird
             sqlDelete();
 
             pnlHighscore.Hide();
+        }
+
+        private void txbNaam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHighScoreInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

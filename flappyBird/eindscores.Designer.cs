@@ -262,15 +262,17 @@ namespace flappyBird
             this.txbNaam.Name = "txbNaam";
             this.txbNaam.Size = new System.Drawing.Size(315, 37);
             this.txbNaam.TabIndex = 0;
+            this.txbNaam.TextChanged += new System.EventHandler(this.txbNaam_TextChanged);
             // 
             // lblHighScoreInfo
             // 
             this.lblHighScoreInfo.AutoSize = true;
-            this.lblHighScoreInfo.Location = new System.Drawing.Point(277, 526);
+            this.lblHighScoreInfo.Location = new System.Drawing.Point(68, 522);
             this.lblHighScoreInfo.Name = "lblHighScoreInfo";
             this.lblHighScoreInfo.Size = new System.Drawing.Size(47, 25);
             this.lblHighScoreInfo.TabIndex = 3;
             this.lblHighScoreInfo.Text = "info";
+            this.lblHighScoreInfo.Click += new System.EventHandler(this.lblHighScoreInfo_Click);
             // 
             // eindscores
             // 

@@ -33,8 +33,8 @@ namespace flappyBird
 
             eindScoreText.Text = "Eind score:" + playerScore.ToString();
 
-            
 
+            lowestScore(1);
 
             if (playerScore > lowestPlayerScore)
             {
@@ -54,15 +54,7 @@ namespace flappyBird
                 {
                     lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "st geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
                 }
-
-
             }
-            else
-            {
-                lblHighScoreInfo.Text = "geen nieuwe highscore behaald" + "\r\n" + "klik hieronder om terug te gaan naar het start scherm";
-            }
-
-
 
         }
         private void InitializeDatabaseConnection()
@@ -174,7 +166,7 @@ namespace flappyBird
                     string localScore = dataReader["Score" + ""].ToString();
 
                     lowestPlayerScore = Convert.ToInt32(localScore);
-
+                  
                     if (amount == 10)
                     {
                         if (lowestPlayerScore > playerScore)

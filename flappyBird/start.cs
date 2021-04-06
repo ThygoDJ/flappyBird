@@ -19,6 +19,7 @@ namespace flappyBird
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // door op de button te klikken  gaat hij naar form2
             form2 gamescherm = new form2();
             gamescherm.ShowDialog();
             
@@ -26,6 +27,7 @@ namespace flappyBird
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
+            // door op de picturebox te klikken gaat hij naar highscores
             highscores scoreboard = new highscores();
             scoreboard.ShowDialog();
 

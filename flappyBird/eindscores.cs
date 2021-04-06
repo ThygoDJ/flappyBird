@@ -55,6 +55,21 @@ namespace flappyBird
                     lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "st geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
                 }
             }
+            else if (placement < 10)
+            {
+                pnlHighscore.Show();
+
+                lowestScore(10);
+                 
+                if (placement > 1)
+                {
+                    lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "e geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
+                }
+                else
+                {
+                    lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "st geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
+                }
+            }
 
         }
         private void InitializeDatabaseConnection()
@@ -134,15 +149,18 @@ namespace flappyBird
         private void sqlDelete()
         {
             OpenConnection();
+            if (placement == 10)
+            {
 
-            string deleteQuery = "DELETE FROM scores ORDER BY Score LIMIT 1";
 
-            MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
+                string deleteQuery = "/*DELETE FROM scores ORDER BY Score LIMIT 1*/";
 
-            cmd.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
 
-            CloseConnection();
+                cmd.ExecuteNonQuery();
 
+                CloseConnection();
+            }
         }
 
         private int lowestScore(int amount)

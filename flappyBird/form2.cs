@@ -27,6 +27,7 @@ namespace flappyBird
         {
             InitializeComponent();
 
+            //de buizen worden ontzichtbaar gemaakt
             buisB.Hide();
             BuisO.Hide();
             buisB2.Hide();
@@ -61,6 +62,7 @@ namespace flappyBird
 
         private void endGame()
         {
+            // dit zal de game stoppen en de score opslaan en naar een andere form gaan
             gameTimer.Stop();
             eindscore = eindscore + score;
             eindscores opnieuwSpelen = new eindscores(eindscore);
@@ -74,7 +76,8 @@ namespace flappyBird
             pipeSpeed = 6;
             score5 = 5;
             //variabelen
-
+           
+            // de buizen worden weer zichtbaar gemaakt
             buisB.Show();
             BuisO.Show();
             buisB2.Show();

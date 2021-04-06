@@ -44,10 +44,10 @@ namespace flappyBird
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pnlHighscore = new System.Windows.Forms.Panel();
+            this.lblHighScoreInfo = new System.Windows.Forms.Label();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txbNaam = new System.Windows.Forms.TextBox();
-            this.lblHighScoreInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -235,6 +235,15 @@ namespace flappyBird
             this.pnlHighscore.Size = new System.Drawing.Size(922, 731);
             this.pnlHighscore.TabIndex = 38;
             // 
+            // lblHighScoreInfo
+            // 
+            this.lblHighScoreInfo.AutoSize = true;
+            this.lblHighScoreInfo.Location = new System.Drawing.Point(68, 540);
+            this.lblHighScoreInfo.Name = "lblHighScoreInfo";
+            this.lblHighScoreInfo.Size = new System.Drawing.Size(47, 25);
+            this.lblHighScoreInfo.TabIndex = 3;
+            this.lblHighScoreInfo.Text = "info";
+            // 
             // btnOpslaan
             // 
             this.btnOpslaan.Location = new System.Drawing.Point(645, 672);
@@ -262,17 +271,6 @@ namespace flappyBird
             this.txbNaam.Name = "txbNaam";
             this.txbNaam.Size = new System.Drawing.Size(315, 37);
             this.txbNaam.TabIndex = 0;
-            
-            // 
-            // lblHighScoreInfo
-            // 
-            this.lblHighScoreInfo.AutoSize = true;
-            this.lblHighScoreInfo.Location = new System.Drawing.Point(68, 522);
-            this.lblHighScoreInfo.Name = "lblHighScoreInfo";
-            this.lblHighScoreInfo.Size = new System.Drawing.Size(47, 25);
-            this.lblHighScoreInfo.TabIndex = 3;
-            this.lblHighScoreInfo.Text = "info";
-            
             // 
             // eindscores
             // 

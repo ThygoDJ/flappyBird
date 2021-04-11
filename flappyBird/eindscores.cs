@@ -13,6 +13,7 @@ namespace flappyBird
 {
     public partial class eindscores : Form
     {
+        //variabelen
         private int playerScore = 0;
 
         private int placement = 1;
@@ -20,6 +21,7 @@ namespace flappyBird
         private int lowestPlayerScore = 0;
 
         private MySqlConnection connection;
+        //einde variabelen
 
         public eindscores(int eindscore)
         {
@@ -35,7 +37,7 @@ namespace flappyBird
 
 
             lowestScore(1);
-
+            // als de spe;er score hoger is dan de laagste speler score voert hij deze if uit
             if (playerScore > lowestPlayerScore)
             {
                 pnlHighscore.Show();
@@ -45,7 +47,7 @@ namespace flappyBird
                 lowestScore(10);
 
 
-
+                // als je eerste bent geworden voert hij de if uit anders de else
                 if (placement > 1)
                 {
                     lblHighScoreInfo.Text = "NEW HIGHSCORE, u bent " + placement.ToString() + "e geplaatst" + "\r\n" + "vul hieronder uw naam in" + "\r\n" + "(waarschuwing: andere spelers kunnen de gekozen naam zien)";
@@ -74,6 +76,7 @@ namespace flappyBird
         }
         private void InitializeDatabaseConnection()
         {
+            //database connectie maken
             string server = "localhost";
             string database = "highscores";
             string dbUsername = "root";
@@ -123,7 +126,8 @@ namespace flappyBird
                 return false;
             }
         }
-
+       
+        // dit zorgt ervoor als de score een top 10 is dat waneer je een naam ingevuld hebt hij naar de database zal gaan met de playerscore
         private void sql()
         {
             OpenConnection();
@@ -146,12 +150,12 @@ namespace flappyBird
 
 
         }
+        // dit zorg ervoor dat de 10de plek word verwijderd uit de database
         private void sqlDelete()
         {
             OpenConnection();
             if (placement == 10)
             {
-
 
                 string deleteQuery = "/*DELETE FROM scores ORDER BY Score LIMIT 1*/";
 
@@ -162,16 +166,12 @@ namespace flappyBird
                 CloseConnection();
             }
         }
-
+        // deze int kijkt welke plek je  ent geeindigd 
         private int lowestScore(int amount)
         {
             OpenConnection();
 
-
-
             string sqlQuery = "SELECT * FROM scores ORDER BY Score LIMIT " + amount;
-
-
 
             if (this.OpenConnection() == true)
             {

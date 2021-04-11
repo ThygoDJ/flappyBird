@@ -27,6 +27,7 @@ namespace flappyBird
 
             List<string>[] AllScores = GetAllScores();
 
+            // alle gegevens worden in de listview geplaats
             for (int i = 0; i < AllScores[0].Count; i++)
             {
                 ListViewItem newScoreItem = new ListViewItem(new string[]
@@ -45,6 +46,7 @@ namespace flappyBird
 
         private void InitializeDatabaseConnection()
         {
+            //database connectie
             string server = "localhost";
             string database = "highscores";
             string dbUsername = "root";
@@ -90,10 +92,12 @@ namespace flappyBird
                 MessageBox.Show(ex.Message);
                 return false;
             }
+            //einde database connectie
         }
 
         public List<string>[] GetAllScores()
         {
+            // dit haalt de gegevens op uit de database
             string sqlQuery = "SELECT * FROM scores ORDER BY Score DESC LIMIT 10";
 
             List<string>[] resultList = new List<string>[3];
